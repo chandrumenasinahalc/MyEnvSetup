@@ -1,3 +1,3 @@
 # MyEnvSetup
-Linux  setup files
+Linux  files
 this is local chagnes
