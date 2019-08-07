@@ -1,12 +1,16 @@
-# execute these to take new vim configs to take effect
+# execute these to for new vim configs to take effect
+
 #prerequisites 
     1. cmake
     2. python2.7
     3. python3.0
+    
 #install nvim and vim plugin manager
 make install
+
 #install plugins
 vim -c "PlugInstall"
+
 #install golang tools
     1. open any new or existing .go file
        vim /tmp/test.go 
