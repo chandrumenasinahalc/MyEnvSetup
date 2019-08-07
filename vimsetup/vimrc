@@ -33,16 +33,6 @@ set backspace=2
 "map leader key
 let mapleader = ","
 let maplocalleader = ";"
-
-"BuffExplore settings
-"noremap <Leader>b :ToggleBufExplorer<cr>
-"Bufferline settings
-"let g:bufferline_echo = 1
-"let g:bufferline_active_buffer_left = '['
-"let g:bufferline_active_buffer_right = ']'
-"let g:bufferline_modified = '+'
-"let g:bufferline_show_bufnr = 1
-"Git key maoings
 noremap <Leader>gd :Gdiff<cr>
 noremap <Leader>gb :Gblame<cr>
 noremap <Leader>ga :Gadd<cr>
@@ -61,40 +51,7 @@ vnoremap <silent> # :<C-U>
 			\escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
 			\gV:call setreg('"', old_reg, old_regtype)<CR>
 
-":nnoremap H gT
-":nnoremap L gt
 :set is
-" Function key mappings Explained "
-" ---------------------------------"
-" <F3> - finding functions calling this function
-" <F4> - finding this C symbol
-" <F5> - finding an egrep pattern
-" <F6> - finding a  file
-" <F7> - finding a definition
-" <F8> - finding assignments to a particular variable
-
-"if strlen($CODE_ROOT) > 0
-"
-"    " setting paths to the cscope and the tag databases ..
-"
-"    set tags=$CODE_ROOT/tags
-"    set tags=$CODE_ROOT/TAGS
-"    set path+=$CODE_ROOT/
-"    set cscopetag
-"    cs add  $CODE_ROOT/cscope.out $CODE_ROOT/
-"
-"    " Adding mappings for working with cscope and tag databases ...
-"    :noremap <F3> : scs f c <C-R>=expand("<cword>")<CR><CR>
-"    :noremap <F4> : scs f s <C-R>=expand("<cword>")<CR><CR>
-"    :noremap <F5> : scs f e <C-R>=expand("<cword>")<CR><CR>
-"    :noremap <F6> : scs f f <C-R>=expand("<cword>")<CR><CR>
-"    :noremap <F7> : scs f g <C-R>=expand("<cword>")<CR><CR>
-"    :noremap <F8> : scs f t <C-R>=expand("<cword>")<CR><CR>
-"    :noremap <C-x> : bd<CR>
-"
-"    " Repository Mappings being added ...
-"
-"endif  "end repo changes "
 "=============================================================================
 " all user defined functions
 "=============================================================================
@@ -164,7 +121,11 @@ function! AddNerdTreeConf()
 
 	let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
 	let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with
-	noremap <Leader>o :NERDTreeToggle<cr>
+    noremap <Leader>o :NERDTreeToggle<cr>
+    " enable line numbers
+    let NERDTreeShowLineNumbers=1
+    " make sure relative line numbers are used
+    autocmd FileType nerdtree setlocal relativenumber
 endfunction
 function!     AddCompletionManagerConf()
 	Plug 'ncm2/ncm2-bufword'
@@ -237,12 +198,11 @@ filetype off                  " required
 
 "   Vim Plug plugin manager
 "Plug 'scrooloose/nerdtree' , { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] } "Loads only when opening NERDTree"
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'tpope/vim-fugitive'
 	Plug 'eugen0329/vim-esearch'
 	"Plug 'kien/ctrlp.vim'
 	Plug 'fatih/vim-go', { 'for' : ['go', 'markdown'] } "Loads only when editing golang files"
-	Plug 'nsf/gocode', {'rtp': 'vim/'}
 	Plug 'derekwyatt/vim-scala'
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-repeat'
@@ -253,13 +213,14 @@ call plug#begin('~/.vim/bundle')
 	Plug 'valloric/youcompleteme'
 	Plug 'easymotion/vim-easymotion'
 	Plug 'trusktr/seti.vim'
-	Plug 'jodosha/vim-godebug'
+	"Plug 'jodosha/vim-godebug'
+    "Search and replace vim plugin
 	Plug 'brooth/far.vim'
 	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 	Plug 'junegunn/fzf.vim'
 	Plug 'mhartington/oceanic-next'
 	Plug 'ryanoasis/vim-devicons'
-	Plug 'wikitopian/hardmode'
+	"Plug 'wikitopian/hardmode'
 	Plug 'machakann/vim-highlightedyank'
 	Plug 'sebdah/vim-delve'
 	Plug 'justinmk/vim-sneak'
@@ -269,6 +230,13 @@ call plug#begin('~/.vim/bundle')
 	Plug 'svermeulen/vim-easyclip'
 	Plug 'kshenoy/vim-signature'
 	Plug 'tpope/vim-rhubarb'
+    Plug 'Lokaltog/powerline'
+    Plug 'tpope/vim-unimpaired'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'tomasiser/vim-code-dark'
+    Plug 'chrisbra/colorizer'
+    Plug 'Shougo/vimproc'
+    "Plug 'Xuyuanp/nerdtree-git-plugin'
 	if !exists("g:gui_oni")
 		"    call plug#begin('~/.vim/bundle')
 		call AddNerdTreeConf()
@@ -287,7 +255,7 @@ nmap <leader>t :TagbarToggle<CR>
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 set breakindent
 "GoGuru scope
-let g:go_guru_scope = ["github.com/...","golangorg/...","mypractice","..."]
+"let g:go_guru_scope = ["github.com/...","golangorg/...","mypractice","..."]
 let g:go_list_type = "quickfix"
 "visual mode text movement and keep in select
 vnoremap <S-TAB> <gv
@@ -338,15 +306,28 @@ let g:ycm_semantic_triggers =  {
 
 :set relativenumber
 
-"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:go_auto_type_info = 0
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:go_auto_type_info = 1
 let g:go_fmt_command = "goimports"
-"let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave = 1
 "let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck', 'varcheck', 'aligncheck', 'ineffassign', 'deadcode','gosimple', 'staticcheck']
+
 ", 'varcheck']
-"let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck', 'varcheck', 'aligncheck', 'ineffassign', 'deadcode','gosimple', 'staticcheck']
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck', 'varcheck', 'aligncheck', 'ineffassign', 'deadcode','gosimple', 'staticcheck']
+"let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck' ]
 let g:go_metalinter_deadline = '10s'
 let g:go_metalinter_command = "--exclude=test"
+let g:go_highlight_functions = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_term_enabled = 1
+let g:go_term_mode = "split"
+let g:go_term_height = 13
+let g:go_highlight_build_constraints = 1
 "let g:go_fmt_fail_silently = 1
 let @g=':vimgrep // % | copen'
 " Zoom / Restore window.
@@ -380,6 +361,21 @@ colorscheme OceanicNext
 " devicons settins
 set encoding=UTF-8
 let g:WebDevIconsUnicodeDecorateFolderNodes=1
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_enable_unite = 1
+let g:webdevicons_enable_vimfiler = 1
+let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_airline_statusline = 1
+let g:webdevicons_enable_ctrlp = 1
+let g:webdevicons_enable_startify = 1
+let g:webdevicons_enable_flagship_statusline = 1
+let g:WebDevIconsUnicodeDecorateFileNodes = 1
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+let g:webdevicons_enable_denite = 1
 " you can add these colors to your .vimrc to help customizing
 
 "enable vim hard mode
@@ -399,11 +395,11 @@ let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_tags_command = 'ctags -R'
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 :set number relativenumber
-:augroup numbertoggle
-:  autocmd!
-:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-:augroup END
+":augroup numbertoggle
+":  autocmd!
+":  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+":  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+":augroup END
 
 set inccommand=nosplit
 let g:highlightedyank_highlight_duration = 10000
@@ -428,7 +424,7 @@ map  <Leader>F <Plug>(easymotion-bd-f)
 nmap <Leader>F <Plug>(easymotion-overwin-f)
 
 " s{char}{char} to move to {char}{char}
-nmap s <Plug>(easymotion-overwin-f2)
+"nmap s <Plug>(easymotion-overwin-f2)
 
 " Move to line
 map <Leader>L <Plug>(easymotion-bd-jk)
@@ -482,19 +478,43 @@ endif
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
-let g:airline_powerline_fonts = 1
+let g:airline_theme = 'codedark'
+"let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = '∥'
-let g:airline#extensions#tabline#left_alt_sep = '∥'
-let g:airline_left_sep = '∥'
-let g:airline_right_sep = '∥'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_theme='atomic'
+let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline#extensions#tabline#left_sep = '∥'
+"let g:airline#extensions#tabline#left_alt_sep = '∥'
+"let g:airline_left_sep = '∥'
+"let g:airline_right_sep = '∥'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.branch = '⎇'
+"let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.paste = '∥'
+"let g:airline_symbols.whitespace = 'Ξ'
+"let g:airline_theme='atomic'
+" unicode symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
+"let g:airline_symbols.dirty=⚡
+"let g:airline_left_sep = '»'
+"let g:airline_left_sep = '▶'
+""let g:airline_right_sep = '«'
+"let g:airline_right_sep = '◀'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.branch = '⎇'
+"let g:airline_symbols.paste = 'ρ'
+""let g:airline_symbols.paste = 'Þ'
+""let g:airline_symbols.paste = '∥'
+"let g:airline_symbols.whitespace = 'Ξ'
 "grepper plugin settins
 nnoremap <Leader>* :Grepper -cword -noprompt<CR>
 
@@ -506,3 +526,77 @@ nnoremap gm m
 let g:EasyClipAutoFormat=1
 nmap <leader>cf <plug>EasyClipToggleFormattedPaste
 set diffopt=vertical
+set guifont=Inconsolata\ for\ Powerline:h15
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+set termencoding=utf-8
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#whitespace#enabled = 0
+nmap <F5> :GoDebugStart<CR>
+nmap <F6> :GoDebugBreakpoint<CR>
+nmap <F7> :GoDebugNext<CR>
+nmap <F8> :GoDebugStep<CR>
+nmap <F9> :GoDebugStepOut<CR>
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+"j and k in wrapped lines
+nmap j gj
+nmap k gk
+"Retain the cursor position across the vim sessions
+function! ResCur()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
+augroup END
+"save and reload folds
+"augroup remember_folds
+  "autocmd!
+  "autocmd BufWinLeave * mkview
+  "autocmd BufWinEnter * silent! loadview
+"augroup END
+"yaml settings
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+"map for paste in insert mode
+imap <C-v> <esc>:set paste<CR>i<C-r>*<esc>:set nopaste<CR>i
+vnoremap <C-c> "+y
+" autocommand for pertty the json using python json.tool
+au BufWritePost *.json silent %!python -mjson.tool 
+let g:go_highlight_function_calls=1
+let g:go_highlight_functions = 1
+let g:go_highlight_variable_assignments=1
+let g:go_highlight_variable_declarations=1
+"let g:go_highlight_function_parameters=1
+colorscheme codedark
+"create new empty file
+set hidden
+nmap <leader>T :enew<cr>
+"swithc buffer
+"" Move to the next buffer
+nmap <localleader>l :bnext<CR>
+
+" Move to the previous buffer
+nmap <localleader>h :bprevious<CR><Paste>
+" delete git buffer after leave
+autocmd BufReadPost fugitive://* set bufhidden=delete
