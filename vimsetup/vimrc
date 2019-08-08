@@ -51,6 +51,11 @@ vnoremap <silent> # :<C-U>
 			\escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
 			\gV:call setreg('"', old_reg, old_regtype)<CR>
 
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 :set is
 "=============================================================================
 " all user defined functions
@@ -329,7 +334,8 @@ let g:go_term_mode = "split"
 let g:go_term_height = 13
 let g:go_highlight_build_constraints = 1
 "let g:go_fmt_fail_silently = 1
-let @g=':vimgrep // % | copen'
+let @g=':vimgrep // % | copen
+'
 " Zoom / Restore window.
 command! ZoomToggle call s:ZoomToggle()
 nnoremap <silent> <C-A> :ZoomToggle<CR>
