@@ -1,7 +1,7 @@
 nvim: /usr/local/bin/nvim.appimage
 /usr/local/bin/nvim.appimage: 
 	@echo "installing nvim... in /usr/local/bin it might require sudo password"
-	@sudo chmod curl -fLo /usr/local/bin/nvim.appimage --create-dirs https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+	@sudo curl -fLo /usr/local/bin/nvim.appimage --create-dirs https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
 	@sudo chmod 755 /usr/local/bin/nvim.appimage
 	@echo "done"
 plugin-manager: ~/.local/share/nvim/site/autoload/plug.vim
