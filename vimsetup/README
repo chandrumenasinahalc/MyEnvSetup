@@ -17,3 +17,5 @@ vim -c "PlugInstall"
     2. in vim command mode :GoInstallBinaries (this install all gootools in
             your gopath)
         :GoInstallBinaries 
+#Install go-copleter for youcompleteme
+ 1. cd ~/.local/share/nvim/plugged/youcompleteme && ./install.py --go-completer && cd -
