@@ -22,6 +22,8 @@ vimrcbk:
 	@echo "Creating new vimrc with taking backup of existing one to '.vimrc_old"
 	@if [ -f ~/.vimrc ]; then mv ~/.vimrc ~/.vimrc_old 2>/dev/null; fi
 	@cp vimrc ~/.vimrc
+	@mkdir -p ~/.config/nvim/
+	@ln -sf ~/.vimrc ~/.config/nvim/init.vim
 install: nvim vim-aliases vimrcbk 
 	@echo "Souce '~/bashrc' to take new aliases effect.Open any file using vim and in command mode run :PlugInstall"
 	@echo "To install go tools which used by vim open any existing or new .go file and run :GoInstallBinaries in vim command mode"
