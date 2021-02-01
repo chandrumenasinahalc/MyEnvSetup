@@ -23,12 +23,6 @@ function! AllAutoCommands()
         autocmd!
         autocmd BufWinEnter * call ResCur()
     augroup END
-
-    inoremap <silent><expr> <TAB>
-                \ pumvisible() ? "\<C-n>" :
-                \ <SID>check_back_space() ? "\<TAB>" :
-                \ coc#refresh()
-    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
     set conceallevel=3
     "yaml settings
     au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
