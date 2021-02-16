@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/chandru/.cirrodev/home/repos/privafy'
 let g:netrw_dirhist_4='/home/chandru/.cirrodev/home/repos/iac-cluster-me-dev/me-resources'
 let g:netrw_dirhist_3='/home/chandru/.cirrodev/home/repos/iac-cluster-me-dev/services/mectl1'
 let g:netrw_dirhist_2='/home/chandru/.cirrodev/home/repos/iac-cluster-me-dev/clusters/me-dev'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_9='/home/chandru/.cirrodev/home/repos/iac-cluster-me-dev/ser
 let g:netrw_dirhist_8='/home/chandru/.cirrodev/home/repos/iac-cluster-me-dev/services/mectl1'
 let g:netrw_dirhist_7='/home/chandru/.cirrodev/home/repos/privafy'
 let g:netrw_dirhist_6='/home/chandru/.cirrodev/home/repos/privafy/mectl'
-let g:netrw_dirhist_5='/home/chandru/.cirrodev/home/repos'

@@ -1,0 +1,49 @@
+"normal mode mapings
+;gr         * :<C-U>CocCommand fzf-preview.ProjectGrep<Space>gcgc        
+;g;         * :<C-U>CocCommand fzf-preview.Changes<CR>gcgc     
+;gb         * :<C-U>CocCommand fzf-preview.GitBranches<CR>gcgc 
+;gl         * :<C-U>CocCommand fzf-preview.GitLogs<CR>gcgc     
+;ga         * :<C-U>CocCommand fzf-preview.GitActions<CR>gcgc  
+;gs         * :<C-U>CocCommand fzf-preview.GitStatus<CR>gcgc   
+,gm <Plug>(git-messenger)    
+,P  <Plug>EasyClipPasteUnformattedBefore         
+,p  <Plug>EasyClipPasteUnformattedAfter
+,,  <Plug>(easymotion-prefix)
+,ca <Plug>NERDCommenterAltDelims       
+,cu <Plug>NERDCommenterUncomment       
+,cb <Plug>NERDCommenterAlignBoth       
+,cl <Plug>NERDCommenterAlignLeft       
+,cA <Plug>NERDCommenterAppend
+,cy <Plug>NERDCommenterYank  
+,cs <Plug>NERDCommenterSexy  
+,ci <Plug>NERDCommenterInvert
+,c$ <Plug>NERDCommenterToEOL 
+,cn <Plug>NERDCommenterNested
+,cm <Plug>NERDCommenterMinimal         
+,c<Space>     <Plug>NERDCommenterToggle
+,cc <Plug>NERDCommenterComment         
+,ff <Plug>(esearch)
+,m* :call ToggleMouse()<CR>  
+,t  :TagbarToggle<CR>        
+,o  :CocCommand explorer<CR><Space>    
+,b  :Buffers<CR>   
+,w  <Plug>(easymotion-overwin-w)       
+,L  <Plug>(easymotion-overwin-line)    
+,F  <Plug>(easymotion-overwin-f)       
+,<Tab>        <Plug>(fzf-maps-n)       
+,gl         * :Glog<CR>      
+,gs         * :Gstatus<CR>   
+,gb         * :Gblame<CR>    
+,gd         * :Gdiff<CR>     
+,qf <Plug>(coc-fix-current)  
+,ac <Plug>(coc-codeaction)
+<Space>p    * :<C-U>CocFzfListResume<CR>         
+<Space>s    * :<C-U>CocFzfList symbols<CR>       
+<Space>o    * :<C-U>CocFzfList outline<CR>       
+<Space>l    * :<C-U>CocFzfList location<CR>      
+<Space>e    * :<C-U>CocFzfList extensions<CR>    
+<Space>c    * :<C-U>CocFzfList commands<CR>      
+<Space>b    * :<C-U>CocFzfList diagnostics --current-buf<CR>         
+<Space>a    * :<C-U>CocFzfList diagnostics<CR>   
+<Space>k    * :call CocAction('doHover')<CR>     
+<Space>j    * :<C-U>CocNext<CR>   

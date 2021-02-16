@@ -1,3 +1,15 @@
+"Toggle zoom
+function! s:ZoomToggle() abort
+	if exists('t:zoomed') && t:zoomed
+		execute t:zoom_winrestcmd
+		let t:zoomed = 0
+	else
+		let t:zoom_winrestcmd = winrestcmd()
+		resize
+		vertical resize
+		let t:zoomed = 1
+	endif
+endfunction
 nmap <Leader>b :Buffers<cr>
 nmap <C-p> :Files<cr>
 "nmap <Leader>o :NERDTreeToggle<cr>
