@@ -1,12 +1,12 @@
 function! VimGoPluginSettings()
     "let g:go_guru_scope = ["github.com/...","golangorg/...","mypractice","..."]
     let g:go_list_type = "quickfix"
-    :au FileType go map <localleader>r <Plug>(go-run)
-    :au FileType go map <localleader>b <Plug>(go-build)
-    :au FileType go map <localleader>i <Plug>(go-imports)
-    :au FileType go map <localleader>d <Plug>(go-describe)
-    :au FileType go map <localleader>dv <Plug>(go-def-vertical)
-    :au FileType go map <localleader>dh <Plug>(go-def-split)
+    "":au FileType go map <localleader>r <Plug>(go-run)
+    "":au FileType go map <localleader>b <Plug>(go-build)
+    "":au FileType go map <localleader>i <Plug>(go-imports)
+    "":au FileType go map <localleader>d <Plug>(go-describe)
+    "":au FileType go map <localleader>dv <Plug>(go-def-vertical)
+    "":au FileType go map <localleader>dh <Plug>(go-def-split)
     let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
     let g:go_auto_type_info = 1
     let g:go_fmt_command = "goimports"

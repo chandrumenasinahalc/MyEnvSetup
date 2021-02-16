@@ -8,6 +8,7 @@ function! GlobalSettings()
     set hlsearch
     set expandtab
     set diffopt+=iwhite
+    set diffopt+=vertical
     syntax on
     "set colorcolumn=80
     highlight ColorColumn ctermbg=1

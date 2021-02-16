@@ -1,7 +1,7 @@
 nmap <Leader>b :Buffers<cr>
 nmap <C-p> :Files<cr>
 "nmap <Leader>o :NERDTreeToggle<cr>
-nmap <Leader>o :CocCommand explorer<cr> 
+nmap <silent> <Leader>o :CocCommand explorer<cr> 
 " jk key in wrapped lines
 nmap j gj
 nmap k gk

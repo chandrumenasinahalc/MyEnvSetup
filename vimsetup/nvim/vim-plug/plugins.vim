@@ -60,6 +60,12 @@ function! LoadPlugins()
     Plug 'glts/vim-radical'
     Plug 'glts/vim-magnum'
     Plug 'Yggdroot/indentLine'
+    if has('nvim-0.5')
+        Plug 'neovim/nvim-lspconfig'
+        Plug 'kosayoda/nvim-lightbulb'
+        Plug 'glepnir/lspsaga.nvim'
+        Plug 'onsails/lspkind-nvim'
+    endif
     call plug#end()            
     filetype plugin indent on   
 endfunction

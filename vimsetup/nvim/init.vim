@@ -15,8 +15,11 @@ function! Main()
     source $HOME/.config/nvim/keys/normal.vim
     source $HOME/.config/nvim/keys/term.vim
     source $HOME/.config/nvim/keys/vis.vim
+    source $HOME/.config/nvim/plugin-config/fzf-preview.vim
+    if has('nvim-0.5')
+            source $HOME/.config/nvim/exp/exp.vim
+    endif
 endfunction
 let mapleader = ","
 let maplocalleader = ";"
 call Main()
-

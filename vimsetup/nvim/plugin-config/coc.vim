@@ -137,7 +137,7 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Do default action for next item.
 nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+nnoremap <silent><nowait> <space>k  :call CocAction('doHover')<CR>
 " Show all diagnostics.
 nnoremap <silent> <space>a       :<C-u>CocFzfList diagnostics<CR>
 nnoremap <silent> <space>b       :<C-u>CocFzfList diagnostics --current-buf<CR>
@@ -152,6 +152,7 @@ nnoremap <silent> <space>o       :<C-u>CocFzfList outline<CR>
 nnoremap <silent> <space>s       :<C-u>CocFzfList symbols<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p       :<C-u>CocFzfListResume<CR>
+nmap <silent> <Esc> :call coc#float#close_all() <CR>
 
 function! s:show_documentation()
     if (index(['vim','help'], &filetype) >= 0)
