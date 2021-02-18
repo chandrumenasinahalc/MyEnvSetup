@@ -5,8 +5,37 @@
       "rootPatterns": ["go.mod"],
       "disableWorkspaceFolders": true,
       "filetypes": ["go"]
-    }
+    },
+    "lua": {
+            "command": "/home/chandru/lua-language-server/bin/Linux/lua-language-server",
+            "args": ["-E", "/home/chandru/lua-language-server/main.lua"],
+            "filetypes": ["lua"],
+            "rootPatterns": [".git/"],
+            "settings": {
+                "Lua": {
+                    "workspace": {
+                        "library": {
+                            "/home/chandru/neovim/runtime/": true
+                        },
+                        "maxPreload": 2000,
+                        "preloadFileSize": 1000
+                    },
+                    "runtime": {
+                        "version": "5.4"
+                    },
+                    "diagnostics": {
+                        "enable": true,
+                        "globals": ["hs", "vim", "it", "describe", "before_each", "after_each"],
+                        "diable": ["lowercase-global"]
+                    },
+                    "completion": {
+                        "keywordSnippet": "Disable"
+                    }
+                }
+            }
+        }
   },
+  "vimlsp.suggest.fromRuntimepath" :true,
   "explorer.file.column.git.icon.untracked": " ",
   "explorer.icon.enableNerdfont": false,
   "explorer.previewAction.onHover": false,

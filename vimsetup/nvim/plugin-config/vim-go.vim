@@ -21,7 +21,7 @@ function! VimGoPluginSettings()
     let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck', 'varcheck', 'aligncheck', 'ineffassign', 'deadcode','gosimple', 'staticcheck']
     "let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck' ]
     let g:go_metalinter_deadline = '10s'
-    let g:go_metalinter_command = "--exclude=test"
+    "let g:go_metalinter_command = "--exclude=test"
     let g:go_highlight_functions = 1
     let g:go_highlight_structs = 1
     let g:go_highlight_operators = 1

@@ -109,6 +109,7 @@ function! GlobalSettings()
     let g:highlightedyank_highlight_duration = 10000
     highlight HighlightedyankRegion cterm=reverse gui=reverse
     set signcolumn=no
+    set cmdheight=1
 endfunction
 
 call GlobalSettings()
