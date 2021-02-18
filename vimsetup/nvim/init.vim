@@ -7,7 +7,7 @@ function! Main()
     source $HOME/.config/nvim/plugin-config/fzf.vim
     source $HOME/.config/nvim/plugin-config/easy-motion.vim
     source $HOME/.config/nvim/plugin-config/easy-search.vim
-    source $HOME/.config/nvim/plugin-config/airline.vim
+    source $HOME/.config/nvim/plugin-config/lightline.vim
     source $HOME/.config/nvim/plugin-config/vim-go.vim
     source $HOME/.config/nvim/general/settings.vim
     source $HOME/.config/nvim/general/autocom.vim
