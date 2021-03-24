@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/chandru/.cirrodev/home/repos/privafy/mectl/messenger/natsmgr'
+let g:netrw_dirhist_9='/home/chandru/.cirrodev/home/repos/nexus-cloud/service-config/nexus/nats-streaming'
+let g:netrw_dirhist_8='/home/chandru/.cirrodev/home/repos/nexus-cloud/service-config'
+let g:netrw_dirhist_7='/home/chandru/.cirrodev/home/repos/privafy/executor/builder'
+let g:netrw_dirhist_6='/home/chandru/.cirrodev/home/repos/privafy/datasvc/marshaller'
+let g:netrw_dirhist_5='/home/chandru/.cirrodev/home/repos/privafy/testrpc'
+let g:netrw_dirhist_4='/home/chandru/.local/share/nvim/site'
+let g:netrw_dirhist_3='/home/chandru/.SpaceVim/bundle'
+let g:netrw_dirhist_2='/home/chandru/Downloads'
+let g:netrw_dirhist_1='/home/chandru/.cirrodev/home/repos/privafy/datasvc/backend'
