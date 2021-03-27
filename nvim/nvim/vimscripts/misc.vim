@@ -74,8 +74,12 @@ endif
 "colorscheme chandru
 :colorscheme chandru
 
-"au VimEnter * highlight TelescopeBorder         guifg=#ffdab9
-au VimEnter * highlight TelescopeBorder         guifg=green
+au VimEnter * highlight TelescopeBorder         guifg=#ffdab9
+au VimEnter * highlight TelescopePromptBorder         guifg=green
+au VimEnter * highlight TelescopeResultsBorder        guifg=orange
+"set telescope border to light_green
+"au VimEnter * highlight TelescopeBorder         guifg=#B5CEA8  
+"au VimEnter * highlight TelescopeBorder         guifg=cyan
 au VimEnter * au! CocFzfLocation User CocLocationsChange
-au VimEnter * highlight BqfPreviewBorder guifg=green
+au VimEnter * highlight BqfPreviewBorder guifg=#ffdab9
 

@@ -23,8 +23,6 @@ map('n',  '<C-l>',' <C-w>l',{silent = true})
 -- terminal
 map('n','<F4>',':Nuake<CR>',{noremap = true,silent = true})
 -- fzf
-map('n','<C-s>',' :BLines<CR>',{noremap = true, silent = true})
-map('n','<C-g>',' :Rg!<CR>',{noremap = true, silent = true})
 -- open vimrc
 map('n','<C-y>',':e $MYVIMRC<CR>',{ noremap=true,silent = true})
 -- Needs to figureout why these
@@ -42,13 +40,17 @@ map('n','<C-_>','<Plug>NERDCommenterToggle',{silent = true})
 map('n','<TAB>',':bnext<CR>',{noremap = true, silent = true})
 if vim.g.telescope == 1
 then
-map('n', '<space>b', ':Telescope buffers prompt_prefix=🔍<CR>', {noremap = true, silent = true})
-map('n', '<C-p>', ':Telescope find_files prompt_prefix=🔍<CR>', {noremap = true, silent = true})
-map('n', '<leader>b', ':Telescope buffers prompt_prefix=🔍<CR>', {noremap = true, silent = true})
+	map('n', '<space>b', ':Telescope buffers prompt_prefix=🔍<CR>', {noremap = true, silent = true})
+	map('n', '<C-p>', ':Telescope find_files prompt_prefix=🔍<CR>', {noremap = true, silent = true})
+	map('n', '<leader>b', ':Telescope buffers prompt_prefix=🔍<CR>', {noremap = true, silent = true})
+	map('n','<C-g>',':Telescope live_grep<CR>',{noremap = true, silent = true})
+	map('n','<C-s>',':lua require("telescope.builtin").current_buffer_fuzzy_find()<CR>',{noremap = true, silent = true})
 else
-map('n', '<space>b', ':Buffers<CR>', {noremap = true, silent = true})
-map('n', '<C-p>', ':Files<CR>', {noremap = true, silent = true})
-map('n', '<leader>b', 'Buffers<CR>', {noremap = true, silent = true})
+	map('n', '<space>b', ':Buffers<CR>', {noremap = true, silent = true})
+	map('n', '<C-p>', ':Files<CR>', {noremap = true, silent = true})
+	map('n', '<leader>b', 'Buffers<CR>', {noremap = true, silent = true})
+	map('n','<C-g>',':Rg!<CR>',{noremap = true, silent = true})
+	map('n','<C-s>',' :BLines<CR>',{noremap = true, silent = true})
 end
 
 -- Insert mode mapings
