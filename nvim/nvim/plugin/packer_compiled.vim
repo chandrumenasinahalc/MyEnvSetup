@@ -52,10 +52,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/completion-nvim"
   },
-  ["dashboard-nvim"] = {
-    loaded = true,
-    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
-  },
   fzf = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/fzf"
@@ -123,6 +119,10 @@ _G.packer_plugins = {
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
+  ["nvim-treesitter-refactor"] = {
+    loaded = true,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/nvim-treesitter-refactor"
   },
   ["nvim-ts-rainbow"] = {
     loaded = true,
@@ -232,6 +232,10 @@ _G.packer_plugins = {
   ["vim-sneak"] = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-sneak"
+  },
+  ["vim-startify"] = {
+    loaded = true,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-startify"
   },
   ["vim-surround"] = {
     loaded = true,

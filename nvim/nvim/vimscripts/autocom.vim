@@ -18,20 +18,11 @@ au BufNewFile,BufRead *.py call SetPythonIndent()
 " fomat c and c++ file using COC plugin
 au! BufWritePost,BufEnter  *.{c,cpp,cc,h,hpp} call SetCCIndent()
 " restore line cursors
-augroup resCur
-				autocmd!
-				autocmd BufWinEnter * call ResCur()
-augroup END
 set conceallevel=3
 "yaml settings
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " Syntax highlight for Jenkinsfile
-au BufNewFile,BufRead Jenkinsfile setf groovy
-autocmd FileType qf nnoremap <buffer><silent> <esc> :quit<cr>
-
-autocmd CursorHold   * lua require'ch-gitblame'.BlameVirtText()
-autocmd CursorMoved  * lua require'ch-gitblame'.ClearBlameVirtText()
-autocmd CursorMovedI * lua require'ch-gitblame'.ClearBlameVirtText()
 hi! link GitLens GitLens
+hi GitLens ctermfg=grey
 

@@ -14,6 +14,7 @@ function M.BlameVirtText()
   local blame = vim.fn.system(string.format('git blame -c -L %d,%d %s', line[1], line[1], currFile))
   local hash = vim.split(blame, '%s')[1]
   local cmd = string.format("git show %s ", hash).."--format='%an | %ar | %s'"
+		local text = ""
   if hash == '00000000' then
     text = 'Not Committed Yet'
   else

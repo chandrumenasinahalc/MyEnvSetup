@@ -13,10 +13,5 @@ vnoremap <silent> # :<C-U>
             \gV:call setreg('"', old_reg, old_regtype)<CR>
 vnoremap // y/<C-R>"<CR>
 "visual mode text movement and keep in select
-vnoremap <S-TAB> <gv
-vnoremap <TAB> >gv
-vnoremap <C-c> "+y
-" delete git buffer after leave
-vnoremap <silent> / :<C-U>call RangeSearch('/')<CR>:if strlen(g:srchstr) > 0\|exec '/'.g:srchstr\|endif<CR>
-vnoremap <silent> ? :<C-U>call RangeSearch('?')<CR>:if strlen(g:srchstr) > 0\|exec '?'.g:srchstr\|endif<CR>
-vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
+vnoremap <silent> / :<C-U>lua require'utils'.RangeSearch('/')<CR>:if strlen(g:srchstr) > 0\|exec '/'.g:srchstr\|endif<CR>
+vnoremap <silent> ? :<C-U>lua require'utils'.RangeSearch('?')<CR>:if strlen(g:srchstr) > 0\|exec '?'.g:srchstr\|endif<CR>

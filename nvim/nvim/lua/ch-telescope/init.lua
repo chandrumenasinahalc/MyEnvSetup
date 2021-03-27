@@ -5,8 +5,16 @@ local actions = require('telescope.actions')
 require('telescope').load_extension('media_files')
 require('telescope').setup {
     defaults = {
-        vimgrep_arguments = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
-        prompt_position = "bottom",
+				vimgrep_arguments = {
+						'rg',
+						'--color=never',
+						'--no-heading',
+						'--with-filename',
+						'--line-number',
+						'--column',
+						'--smart-case'
+				},
+				prompt_position = "bottom",
         prompt_prefix = "🔍 ",
         selection_caret = " ",
         entry_prefix = "  ",
@@ -69,3 +77,15 @@ require('telescope').setup {
 		   }
   }
 }
+vim.cmd([[
+highlight TelescopeSelection      guifg=#D79921
+highlight TelescopeSelectionCaret guifg=#CC241D
+highlight TelescopeMultiSelection guifg=#928374
+highlight TelescopeNormal         guibg=#00000
+highlight TelescopeBorder         guifg=#ffdab9
+highlight TelescopePromptBorder   guifg=#ffffff
+highlight TelescopeResultsBorder  guifg=#ffffff
+highlight TelescopePreviewBorder  guifg=#ffffff
+highlight TelescopeMatching       guifg=blue
+highlight TelescopePromptPrefix   guifg=red
+]])

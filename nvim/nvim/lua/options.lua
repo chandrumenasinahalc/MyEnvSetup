@@ -20,6 +20,8 @@ vim.wo.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shif
 vim.o.updatetime = 300 -- Faster completion
 vim.o.timeoutlen = 1000 -- By default timeoutlen is 1000 ms
 vim.o.clipboard = "unnamedplus" -- Copy paste between vim and everything else
+vim.o.shiftwidth=4
+vim.o.tabstop=2
 --vim.o.guifont = "JetBrainsMono\\ Nerd\\ Font\\ Mono:h18"
 vim.o.smarttab = true
 vim.o.autoindent = true
@@ -39,7 +41,7 @@ vim.cmd("set noshowmode")
 vim.cmd('set iskeyword+=-') -- treat dash separated words as a word text object"
 vim.cmd('set shortmess+=c') -- Don't pass messages to |ins-completion-menu|.
 vim.cmd('set whichwrap+=<,>,[,],h,l') -- move to next line with theses keys
-vim.cmd('set ts=2') -- Insert 2 spaces for a tab
+vim.cmd('set ts=4') -- Insert 2 spaces for a tab
 vim.cmd('set nocompatible')
 vim.cmd('set relativenumber')
 if vim.fn.has("termguicolors")
@@ -48,5 +50,14 @@ then
 end
 vim.cmd('set formatoptions-=cro')
 vim.g.mapleader=","
-vim.g.localleader=";"
+vim.g.maplocalleader=";"
 vim.g.telescope = 1
+-- some highlights
+vim.cmd('highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15')
+vim.cmd('highlight ColorColumn ctermbg=1')
+vim.cmd('hi Search cterm=NONE ctermfg=grey ctermbg=blue')
+--"set wildmenu
+--"set wildmode=list:longest,full
+vim.cmd('highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15')
+--"colorscheme codedark
+vim.g.highlightedyank_highlight_duration = 10000

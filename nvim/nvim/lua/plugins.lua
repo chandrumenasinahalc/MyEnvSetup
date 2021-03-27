@@ -32,7 +32,6 @@ return require('packer').startup(function(use)
     use 'junegunn/fzf.vim'
 		vim.cmd('source $HOME/.config/nvim/vimscripts/fzf.vim')
 		---
-    use 'antoinemadec/coc-fzf'
     use 'machakann/vim-highlightedyank'
     use 'sebdah/vim-delve'
     use 'justinmk/vim-sneak'
@@ -43,14 +42,15 @@ return require('packer').startup(function(use)
     use 'rhysd/git-messenger.vim'
 		--
     use {'neoclide/coc.nvim',branch='release'}
-		vim.cmd('source $HOME/.config/nvim/vimscripts/coc.vim')
+    vim.cmd('source $HOME/.config/nvim/vimscripts/coc.vim')
+    use 'antoinemadec/coc-fzf'
 		--
     use 'iamcco/markdown-preview.nvim'--, { 'do': { -> mkdp#util#install() } }
     use 'Lenovsky/nuake'
     --use 'voldikss/vim-floaterm'
     use 'aklt/plantuml-syntax'
     use 'rbgrouleff/bclose.vim'
-    --use 'mhinz/vim-startify'
+    use 'mhinz/vim-startify'
     --use 'ryanoasis/vim-devicons'
     -- Convert numbers for diffrent base like octal,binary, decimal etc (gA
     -- show all version of number)
@@ -60,14 +60,12 @@ return require('packer').startup(function(use)
     use 'neovim/nvim-lspconfig'
     use 'nvim-lua/completion-nvim'
     use 'sumneko/lua-language-server'
-    use {'nvim-treesitter/nvim-treesitter', run=':TSUpdate'}
-    use 'glepnir/dashboard-nvim'
+    --use 'glepnir/dashboard-nvim'
     use 'nvim-lua/popup.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'psliwka/vim-smoothie'
     use 'kevinhwang91/nvim-bqf'
     use 'mhinz/vim-grepper'
-    use 'p00f/nvim-ts-rainbow'
     use 'kyazdani42/nvim-web-devicons'
     use 'nvim-telescope/telescope-media-files.nvim'
     use 'kyazdani42/nvim-tree.lua'
@@ -79,6 +77,10 @@ return require('packer').startup(function(use)
     use 'gennaro-tedesco/nvim-peekup'
     use 'phaazon/hop.nvim'
     use 'kevinhwang91/rnvimr'
+    use {'nvim-treesitter/nvim-treesitter', run=':TSUpdate'}
+    use 'nvim-treesitter/nvim-treesitter-refactor'
+    use 'p00f/nvim-ts-rainbow'
+     use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
     --use 'neovim/nvim-lspconfig'
     --use 'glepnir/lspsaga.nvim'
     --use 'kosayoda/nvim-lightbulb'

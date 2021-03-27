@@ -60,13 +60,22 @@ nmap gs  <plug>(GrepperOperator)
 xmap gs  <plug>(GrepperOperator)
 
 " configure nvcode-color-schemes
-let g:nvcode_termcolors=256
+"let g:nvcode_termcolors=256
 
-syntax on
-colorscheme nvcode " Or whatever colorscheme you make
+"syntax on
+"colorscheme nvcode " Or whatever colorscheme you make
 " checks if your terminal has 24-bit color support
 if (has("termguicolors"))
     set termguicolors
     hi LineNr ctermbg=NONE guibg=NONE
 endif
+"highlight Comment cterm=italic gui=italic
+"highlight TSComment cterm=italic gui=italic
+"colorscheme chandru
+:colorscheme chandru
+
+"au VimEnter * highlight TelescopeBorder         guifg=#ffdab9
+au VimEnter * highlight TelescopeBorder         guifg=green
+au VimEnter * au! CocFzfLocation User CocLocationsChange
+au VimEnter * highlight BqfPreviewBorder guifg=green
 
