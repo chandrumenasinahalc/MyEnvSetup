@@ -1,5 +1,5 @@
 let g:lightline = {
-\   'colorscheme': 'codedark',
+\   'colorscheme': 'seoul256',
 \   'mode_map': {
 \   'n' : "\u24C3",
 \   'i' : "\u24BE",
@@ -16,10 +16,10 @@ let g:lightline = {
 \   'active': {
 \    'left' :[[ 'mode', 'paste' ],['gitbranch'],
 \             [ 'readonly', 'filename', 'modified' ]],
-\    'right':[[ 'percent', 'lineinfo' ], [ 'cocstatus' ]]
+\    'right':[[ 'percent', 'lineinfo' ]]
 \   },
 \   'tabline': {
-\     'left': [['explorer_pad'],['buffers']],
+\     'left': [['buffers']],
 \     'right': [['smarttabs']]
 \   },
 \   'separator': {
@@ -32,7 +32,6 @@ let g:lightline = {
 \     'buffers': 1
 \   },
 \   'component_function': {
-\     'explorer_pad': 'lightline#explorer_pad#left_pad',
 \     'percent': 'LightlinePercent',
 \     'lineinfo': 'LightlineLineinfo',
 \     'filename': 'LightlineFilename',
@@ -213,7 +212,7 @@ endfunction
 
 " autoreload
 command! LightlineReload call LightlineReload()
-call lightline#explorer_pad#init()
+"call lightline#explorer_pad#init()
 
 function! LightlineReload() abort
     call lightline#init()

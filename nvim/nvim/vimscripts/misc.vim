@@ -71,8 +71,9 @@ if (has("termguicolors"))
 endif
 "highlight Comment cterm=italic gui=italic
 "highlight TSComment cterm=italic gui=italic
-"colorscheme chandru
-:colorscheme chandru
+colorscheme chandru
+":colorscheme nvcode
+"au VimEnter * colorscheme chandru
 
 au VimEnter * highlight TelescopeBorder         guifg=#ffdab9
 au VimEnter * highlight TelescopePromptBorder         guifg=green
@@ -82,4 +83,5 @@ au VimEnter * highlight TelescopeResultsBorder        guifg=orange
 "au VimEnter * highlight TelescopeBorder         guifg=cyan
 au VimEnter * au! CocFzfLocation User CocLocationsChange
 au VimEnter * highlight BqfPreviewBorder guifg=#ffdab9
+au VimEnter * highlight GitLens guifg=#5C5656
 

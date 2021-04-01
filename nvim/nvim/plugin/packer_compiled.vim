@@ -32,6 +32,10 @@ local function try_loadstring(s, component, name)
 end
 
 _G.packer_plugins = {
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/barbar.nvim"
+  },
   ["bclose.vim"] = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/bclose.vim"
@@ -72,6 +76,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/hop.nvim"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+  },
   ["lightline-bufferline"] = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/lightline-bufferline"
@@ -104,10 +112,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/nvim-bqf"
   },
-  ["nvim-lspconfig"] = {
-    loaded = true,
-    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
-  },
   ["nvim-peekup"] = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/nvim-peekup"
@@ -123,6 +127,10 @@ _G.packer_plugins = {
   ["nvim-treesitter-refactor"] = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/nvim-treesitter-refactor"
+  },
+  ["nvim-treesitter-textobjects"] = {
+    loaded = true,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects"
   },
   ["nvim-ts-rainbow"] = {
     loaded = true,
@@ -152,10 +160,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/quick-scope"
   },
-  rnvimr = {
-    loaded = true,
-    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/rnvimr"
-  },
   tagbar = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/tagbar"
@@ -167,6 +171,14 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ["vCoolor.vim"] = {
+    loaded = true,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vCoolor.vim"
+  },
+  ["vim-choosewin"] = {
+    loaded = true,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-choosewin"
   },
   ["vim-code-dark"] = {
     loaded = true,
@@ -244,6 +256,14 @@ _G.packer_plugins = {
   ["vim-unimpaired"] = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-unimpaired"
+  },
+  ["vim-visual-multi"] = {
+    loaded = true,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-visual-multi"
+  },
+  ["vim-which-key"] = {
+    loaded = true,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-which-key"
   }
 }
 

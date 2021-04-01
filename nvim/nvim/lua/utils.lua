@@ -23,7 +23,7 @@ function M.ToggleMouse()
 
 	-- check if mouse is enabled
 	if vim.o.mouse == 'a'
-  then
+    then
 		-- disable mouse
 		vim.o.mouse =''
 	else
@@ -34,7 +34,7 @@ end
 --Retain the cursor position across the vim sessions
 function M.ResCur()
   if vim.fn.line("'\"") <= vim.fn.line("$")
-		then
+  then
     vim.cmd([[ normal! g`" ]])
     return 1
   end

@@ -5,11 +5,12 @@ map('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 -- no hl
 map('n', '<Leader>h', ':set hlsearch!<CR>', {noremap = true, silent = true})
 map('n', '<space>e', ':NvimTreeToggle<CR>', { silent = true})
-map('n', '<space>f', ':CocCommand explorer --preset=floatingLeftside<CR>', {noremap = true, silent = true})
+map('n', '<space>f', ':Files<CR>', {noremap = true, silent = true})
 map('n', '<space>w', ':Windows<CR>', {noremap = true, silent = true})
 map('n', '<space>t', ':TagbarToggle<CR>', {noremap = true, silent = true})
 map('n', '<space>m', ':lua require("utils").ToggleMouse()<CR>', {noremap = true, silent = true})
 map('n', '<space>z', ':call s:ZoomToggle<CR>', {noremap = true, silent = true})
+map('n', '<space>d', ':CocDiagnostics<CR>', {noremap = true, silent = true})
 -- resize windows
 map('n', '<M-j>',':resize -2<CR>',{noremap = true, silent = true})
 map('n',  '<M-k>',':resize +2<CR>',{noremap = true, silent = true})
@@ -22,6 +23,11 @@ map('n',  '<C-k>',' <C-w>k',{silent = true})
 map('n',  '<C-l>',' <C-w>l',{silent = true})
 -- terminal
 map('n','<F4>',':Nuake<CR>',{noremap = true,silent = true})
+vim.cmd([[
+        tnoremap <F4> <C-\><C-n>:Nuake<CR>
+]]
+)
+--vim.cmd('tnoremap <F4> <C-\><C-n>:Nuake<CR>')
 -- fzf
 -- open vimrc
 map('n','<C-y>',':e $MYVIMRC<CR>',{ noremap=true,silent = true})
@@ -40,17 +46,17 @@ map('n','<C-_>','<Plug>NERDCommenterToggle',{silent = true})
 map('n','<TAB>',':bnext<CR>',{noremap = true, silent = true})
 if vim.g.telescope == 1
 then
-	map('n', '<space>b', ':Telescope buffers prompt_prefix=🔍<CR>', {noremap = true, silent = true})
-	map('n', '<C-p>', ':Telescope find_files prompt_prefix=🔍<CR>', {noremap = true, silent = true})
-	map('n', '<leader>b', ':Telescope buffers prompt_prefix=🔍<CR>', {noremap = true, silent = true})
-	map('n','<C-g>',':Telescope live_grep<CR>',{noremap = true, silent = true})
-	map('n','<C-s>',':lua require("telescope.builtin").current_buffer_fuzzy_find()<CR>',{noremap = true, silent = true})
+map('n', '<space>b', ':Telescope buffers prompt_prefix=🔍<CR>', {noremap = true, silent = true})
+map('n', '<C-p>', ':Telescope find_files prompt_prefix=🔍<CR>', {noremap = true, silent = true})
+map('n', '<leader>b', ':Telescope buffers prompt_prefix=🔍<CR>', {noremap = true, silent = true})
+map('n','<C-g>',':Telescope live_grep<CR>',{noremap = true, silent = true})
+map('n','<C-s>',':lua require("telescope.builtin").current_buffer_fuzzy_find()<CR>',{noremap = true, silent = true})
 else
-	map('n', '<space>b', ':Buffers<CR>', {noremap = true, silent = true})
-	map('n', '<C-p>', ':Files<CR>', {noremap = true, silent = true})
-	map('n', '<leader>b', 'Buffers<CR>', {noremap = true, silent = true})
-	map('n','<C-g>',':Rg!<CR>',{noremap = true, silent = true})
-	map('n','<C-s>',' :BLines<CR>',{noremap = true, silent = true})
+map('n', '<space>b', ':Buffers<CR>', {noremap = true, silent = true})
+map('n', '<C-p>', ':Files<CR>', {noremap = true, silent = true})
+map('n', '<leader>b', 'Buffers<CR>', {noremap = true, silent = true})
+map('n','<C-g>',':Rg!<CR>',{noremap = true, silent = true})
+map('n','<C-s>',' :BLines<CR>',{noremap = true, silent = true})
 end
 
 -- Insert mode mapings

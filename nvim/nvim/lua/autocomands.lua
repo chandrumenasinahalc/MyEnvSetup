@@ -52,6 +52,6 @@ aucom.define_augroups({
 })
 aucom.define_augroups({
 		res_curs = {
-				{'BufEnter','*',':lua require("utils").ResCur()'}
+				{'BufEnter','*.*',':lua require("utils").ResCur()'}
 		}
 })

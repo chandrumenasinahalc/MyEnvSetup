@@ -1,4 +1,32 @@
 {
+	"suggest.completionItemKindLabels": {
+    "method": "  ",
+    "function": "  ",
+    "variable": "[]",
+    "field": "  ",
+    "typeParameter": "<>",
+    "constant": "  ",
+    "class": "  ",
+    "interface": "  ",
+    "struct": "  ",
+    "event": "  ",
+    "operator": "  ",
+    "module": "  ",
+    "property": "  ",
+    "enum": " [E] ", 
+    "reference": "  ",
+    "keyword": "  ",
+    "file": "   ",
+    "folder": "  ",
+    "color": "  ",
+    "unit": " 塞 ",
+    "snippet": "  ",
+    "text": "  ",
+    "constructor": "  ",
+    "value": "  ",
+    "enumMember": "  ",
+    "default": "  "
+  },
     "languageserver": {
     "lua": {
             "command": "/home/chandru/lua-language-server/bin/Linux/lua-language-server",
@@ -29,6 +57,12 @@
             }
         }
   },
+  "diagnostic.errorSign":"⚠",
+  "diagnostic.infoSign": "🛈",
+  "diagnostic.warningSign": "⚠",
+  "diagnostic.showUnused": true,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": true,
   "go.goplsOptions": {
     "completeUnimported": true
   },
@@ -153,7 +187,9 @@
     "nats",
     "peerctl",
     "privafy",
-    "scribectl"
+    "rmsg",
+    "scribectl",
+    "subsc"
   ],
   "cSpell.enabledLanguageIds": [
     "asciidoc",
@@ -189,6 +225,9 @@
     "vim",
     "yaml",
     "yml"
+  ],
+  "cSpell.ignoreWords": [
+    "highlight"
   ]
 
 }

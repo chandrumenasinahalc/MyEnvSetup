@@ -8,30 +8,27 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile' -- Auto compile when there are changes in plugins.lua
+require('packer').init({display = {auto_clean = false}})
 
 return require('packer').startup(function(use)
     -- Packer can manage itself as an optional plugin
-    use 'wbthomason/packer.nvim'
-    use 'tpope/vim-fugitive'
+     use 'wbthomason/packer.nvim'
+     use 'tpope/vim-fugitive'
     -- little extention to fugutive for bitbucket
     use 'tommcdo/vim-fubitive'
     use 'eugen0329/vim-esearch'
     use {'fatih/vim-go', ft={'go', 'markdown'}}
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
-		---
     use 'itchyny/lightline.vim'
     use 'mengelbrecht/lightline-bufferline'
     vim.cmd('source $HOME/.config/nvim/vimscripts/lightline.vim')
-		---
     use 'majutsushi/tagbar'
     use 'scrooloose/nerdcommenter'
     use 'easymotion/vim-easymotion'
     use {'junegunn/fzf', run = {function() vim.fn['firenvim#install'](0) end}}
-		---
     use 'junegunn/fzf.vim'
-		vim.cmd('source $HOME/.config/nvim/vimscripts/fzf.vim')
-		---
+    vim.cmd('source $HOME/.config/nvim/vimscripts/fzf.vim')
     use 'machakann/vim-highlightedyank'
     use 'sebdah/vim-delve'
     use 'justinmk/vim-sneak'
@@ -40,14 +37,11 @@ return require('packer').startup(function(use)
     use 'tpope/vim-unimpaired'
     use 'smpchandru/vim-code-dark'
     use 'rhysd/git-messenger.vim'
-		--
     use {'neoclide/coc.nvim',branch='release'}
     vim.cmd('source $HOME/.config/nvim/vimscripts/coc.vim')
     use 'antoinemadec/coc-fzf'
-		--
     use 'iamcco/markdown-preview.nvim'--, { 'do': { -> mkdp#util#install() } }
     use 'Lenovsky/nuake'
-    --use 'voldikss/vim-floaterm'
     use 'aklt/plantuml-syntax'
     use 'rbgrouleff/bclose.vim'
     use 'mhinz/vim-startify'
@@ -57,7 +51,6 @@ return require('packer').startup(function(use)
     use 'glts/vim-radical'
     use 'glts/vim-magnum'
     --use 'tpope/vim-vinegar'
-    use 'neovim/nvim-lspconfig'
     use 'nvim-lua/completion-nvim'
     use 'sumneko/lua-language-server'
     --use 'glepnir/dashboard-nvim'
@@ -76,11 +69,20 @@ return require('packer').startup(function(use)
     use 'chrisbra/colorizer'
     use 'gennaro-tedesco/nvim-peekup'
     use 'phaazon/hop.nvim'
-    use 'kevinhwang91/rnvimr'
+    --use 'kevinhwang91/rnvimr'
     use {'nvim-treesitter/nvim-treesitter', run=':TSUpdate'}
-    use 'nvim-treesitter/nvim-treesitter-refactor'
+	use 'nvim-treesitter/nvim-treesitter-refactor'
+	use 'nvim-treesitter/nvim-treesitter-textobjects'
     use 'p00f/nvim-ts-rainbow'
-     use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
+    use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
+ --   use 'neovim/nvim-lspconfig'
+    use 'romgrk/barbar.nvim'
+--    use 'TimUntersberger/neogit'
+    use 't9md/vim-choosewin'
+    use 'liuchengxu/vim-which-key'
+    use 'mg979/vim-visual-multi'
+    use 'KabbAmine/vCoolor.vim'
+    --use 'kabouzeid/nvim-lspinstall'
     --use 'neovim/nvim-lspconfig'
     --use 'glepnir/lspsaga.nvim'
     --use 'kosayoda/nvim-lightbulb'
