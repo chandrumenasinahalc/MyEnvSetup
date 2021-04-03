@@ -32,6 +32,10 @@ local function try_loadstring(s, component, name)
 end
 
 _G.packer_plugins = {
+  NrrwRgn = {
+    loaded = true,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/NrrwRgn"
+  },
   ["barbar.nvim"] = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/barbar.nvim"
@@ -60,9 +64,18 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/fzf"
   },
+  ["fzf-floaterm"] = {
+    loaded = true,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/fzf-floaterm"
+  },
   ["fzf.vim"] = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/fzf.vim"
+  },
+  ["galaxyline.nvim"] = {
+    config = { "\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18ch-galaxyline\frequire\0" },
+    loaded = true,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
   },
   ["git-messenger.vim"] = {
     loaded = true,
@@ -79,14 +92,6 @@ _G.packer_plugins = {
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
-  },
-  ["lightline-bufferline"] = {
-    loaded = true,
-    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/lightline-bufferline"
-  },
-  ["lightline.vim"] = {
-    loaded = true,
-    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/lightline.vim"
   },
   ["lua-language-server"] = {
     loaded = true,
@@ -188,6 +193,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-delve"
   },
+  ["vim-devicons"] = {
+    loaded = true,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-devicons"
+  },
   ["vim-easyclip"] = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-easyclip"
@@ -199,6 +208,10 @@ _G.packer_plugins = {
   ["vim-esearch"] = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-esearch"
+  },
+  ["vim-floaterm"] = {
+    loaded = true,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-floaterm"
   },
   ["vim-fubitive"] = {
     loaded = true,
@@ -267,6 +280,8 @@ _G.packer_plugins = {
   }
 }
 
+-- Config for: galaxyline.nvim
+try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18ch-galaxyline\frequire\0", "config", "galaxyline.nvim")
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads

@@ -85,3 +85,5 @@ au VimEnter * au! CocFzfLocation User CocLocationsChange
 au VimEnter * highlight BqfPreviewBorder guifg=#ffdab9
 au VimEnter * highlight GitLens guifg=#5C5656
 
+au VimEnter * highlight Floaterm guibg=NONE
+au VimEnter * highlight FloatermBorder guibg=NONE guifg=#ffdab9 

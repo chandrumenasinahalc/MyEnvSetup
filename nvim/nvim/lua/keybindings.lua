@@ -11,6 +11,7 @@ map('n', '<space>t', ':TagbarToggle<CR>', {noremap = true, silent = true})
 map('n', '<space>m', ':lua require("utils").ToggleMouse()<CR>', {noremap = true, silent = true})
 map('n', '<space>z', ':call s:ZoomToggle<CR>', {noremap = true, silent = true})
 map('n', '<space>d', ':CocDiagnostics<CR>', {noremap = true, silent = true})
+--map('n', '<space>f', ':FloatermToggle<CR>', {noremap = true, silent = true})
 -- resize windows
 map('n', '<M-j>',':resize -2<CR>',{noremap = true, silent = true})
 map('n',  '<M-k>',':resize +2<CR>',{noremap = true, silent = true})
@@ -22,11 +23,12 @@ map('n',  '<C-j>',' <C-w>j',{silent = true})
 map('n',  '<C-k>',' <C-w>k',{silent = true})
 map('n',  '<C-l>',' <C-w>l',{silent = true})
 -- terminal
-map('n','<F4>',':Nuake<CR>',{noremap = true,silent = true})
+map('n','<F4>',':FloatermToggle<CR>',{noremap = true,silent = true})
 vim.cmd([[
-        tnoremap <F4> <C-\><C-n>:Nuake<CR>
+        tnoremap <F4> <C-\><C-n>:FloatermToggle<CR>
 ]]
 )
+--tnoremap <F4> <C-\><C-n>:Nuake<CR>
 --vim.cmd('tnoremap <F4> <C-\><C-n>:Nuake<CR>')
 -- fzf
 -- open vimrc
@@ -140,3 +142,4 @@ map('n','<localleader>gr',':<C-u>CocCommand fzf-preview.ProjectGrep<Space>',{sil
 -- hop.nvim
 map('n', 's', ":HopChar2<cr>", {silent = true})
 map('n', 'S', ":HopWord<cr>", {silent = true})
+

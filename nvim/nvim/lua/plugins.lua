@@ -20,9 +20,17 @@ return require('packer').startup(function(use)
     use {'fatih/vim-go', ft={'go', 'markdown'}}
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
-    use 'itchyny/lightline.vim'
-    use 'mengelbrecht/lightline-bufferline'
-    vim.cmd('source $HOME/.config/nvim/vimscripts/lightline.vim')
+    --use 'itchyny/lightline.vim'
+    --use 'mengelbrecht/lightline-bufferline'
+    use {
+    		'glepnir/galaxyline.nvim',
+    		branch = 'main',
+    		-- your statusline
+			config = function() require'ch-galaxyline' end,
+    		-- some optional icons
+    		requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    }
+    --vim.cmd('source $HOME/.config/nvim/vimscripts/lightline.vim')
     use 'majutsushi/tagbar'
     use 'scrooloose/nerdcommenter'
     use 'easymotion/vim-easymotion'
@@ -45,7 +53,10 @@ return require('packer').startup(function(use)
     use 'aklt/plantuml-syntax'
     use 'rbgrouleff/bclose.vim'
     use 'mhinz/vim-startify'
-    --use 'ryanoasis/vim-devicons'
+	use 'ryanoasis/vim-devicons'
+    use 'kyazdani42/nvim-web-devicons'
+	--use 'yamatsum/nvim-web-nonicons'
+
     -- Convert numbers for diffrent base like octal,binary, decimal etc (gA
     -- show all version of number)
     use 'glts/vim-radical'
@@ -59,7 +70,6 @@ return require('packer').startup(function(use)
     use 'psliwka/vim-smoothie'
     use 'kevinhwang91/nvim-bqf'
     use 'mhinz/vim-grepper'
-    use 'kyazdani42/nvim-web-devicons'
     use 'nvim-telescope/telescope-media-files.nvim'
     use 'kyazdani42/nvim-tree.lua'
     use 'christianchiarulli/nvcode-color-schemes.vim'
@@ -76,16 +86,21 @@ return require('packer').startup(function(use)
     use 'p00f/nvim-ts-rainbow'
     use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
  --   use 'neovim/nvim-lspconfig'
-    use 'romgrk/barbar.nvim'
+	use 'romgrk/barbar.nvim'
 --    use 'TimUntersberger/neogit'
     use 't9md/vim-choosewin'
     use 'liuchengxu/vim-which-key'
     use 'mg979/vim-visual-multi'
     use 'KabbAmine/vCoolor.vim'
-    --use 'kabouzeid/nvim-lspinstall'
+    use 'voldikss/vim-floaterm'
+	use	'voldikss/fzf-floaterm'
+	use 'chrisbra/NrrwRgn'
+	--use 'tjdevries/colorbuddy.nvim'
+    --use 'marko-cerovac/material.nvim'
+    --O
     --use 'neovim/nvim-lspconfig'
     --use 'glepnir/lspsaga.nvim'
-    --use 'kosayoda/nvim-lightbulb'
+	--use 'kosayoda/nvim-lightbulb'
     --use 'hrsh7th/nvim-compe'
     --use 'kosayoda/nvim-lightbulb'
     --use 'glepnir/lspsaga.nvim'
