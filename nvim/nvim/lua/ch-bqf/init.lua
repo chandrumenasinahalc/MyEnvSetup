@@ -1,4 +1,4 @@
-local context = {context = {bqf = {}}}
+--local context = {context = {bqf = {}}}
 require('bqf').setup({
     auto_enable = {
         description = [[enable nvim-bqf in quickfix window automatically]],

@@ -40,6 +40,17 @@ function! Coc_qf_jump2loc(locs) abort
         call win_gotoid(winid)
     endif
 endfunction
+function! ResCur()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
+augroup END
 
 augroup Grepper
     autocmd!
@@ -87,3 +98,9 @@ au VimEnter * highlight GitLens guifg=#5C5656
 
 au VimEnter * highlight Floaterm guibg=NONE
 au VimEnter * highlight FloatermBorder guibg=NONE guifg=#ffdab9 
+let g:neovide_fullscreen=v:true
+set shiftwidth=4
+let g:neovide_floating_window_opacity = 1.0
+let g:neovide_window_floating_blur=0
+"set guifont=DejaVu\ Sans Mono\ for\ Powerline\ Book 18
+"set guifont=JetBrains\ Mono,Delugia\ Nerd\ Font,FreeMono:h15

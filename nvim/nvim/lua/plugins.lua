@@ -1,4 +1,4 @@
-local execute = vim.api.nvim_command
+local execute = vim.fn.nvim_command
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
@@ -9,6 +9,23 @@ end
 
 vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile' -- Auto compile when there are changes in plugins.lua
 require('packer').init({display = {auto_clean = false}})
+
+local function require_plugin(plugin)
+    local plugin_prefix = fn.stdpath('data') .. '/site/pack/packer/opt/'
+
+    local plugin_path = plugin_prefix .. plugin .. '/'
+    --	print('test '..plugin_path)
+    local ok, err, code = os.rename(plugin_path, plugin_path)
+    if not ok then
+        if code == 13 then
+            -- Permission denied, but it exists
+            return true
+        end
+    end
+    --	print(ok, err, code)
+    if ok then vim.cmd('packadd ' .. plugin) end
+    return ok, err, code
+end
 
 return require('packer').startup(function(use)
     -- Packer can manage itself as an optional plugin
@@ -49,12 +66,12 @@ return require('packer').startup(function(use)
     vim.cmd('source $HOME/.config/nvim/vimscripts/coc.vim')
     use 'antoinemadec/coc-fzf'
     use 'iamcco/markdown-preview.nvim'--, { 'do': { -> mkdp#util#install() } }
-    use 'Lenovsky/nuake'
+    --use 'Lenovsky/nuake'
     use 'aklt/plantuml-syntax'
     use 'rbgrouleff/bclose.vim'
     use 'mhinz/vim-startify'
 	use 'ryanoasis/vim-devicons'
-    use 'kyazdani42/nvim-web-devicons'
+    --use 'kyazdani42/nvim-web-devicons'
 	--use 'yamatsum/nvim-web-nonicons'
 
     -- Convert numbers for diffrent base like octal,binary, decimal etc (gA
@@ -86,8 +103,8 @@ return require('packer').startup(function(use)
     use 'p00f/nvim-ts-rainbow'
     use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
  --   use 'neovim/nvim-lspconfig'
-	use 'romgrk/barbar.nvim'
---    use 'TimUntersberger/neogit'
+	--use 'romgrk/barbar.nvim'
+	use 'TimUntersberger/neogit'
     use 't9md/vim-choosewin'
     use 'liuchengxu/vim-which-key'
     use 'mg979/vim-visual-multi'
@@ -95,8 +112,13 @@ return require('packer').startup(function(use)
     use 'voldikss/vim-floaterm'
 	use	'voldikss/fzf-floaterm'
 	use 'chrisbra/NrrwRgn'
-	--use 'tjdevries/colorbuddy.nvim'
-    --use 'marko-cerovac/material.nvim'
+	use 'nvim-telescope/telescope-fzf-writer.nvim'
+	use 'tjdevries/colorbuddy.nvim'
+	use 'marko-cerovac/material.nvim'
+    --use {'neovim/nvim-lspconfig'}
+    --use {'glepnir/lspsaga.nvim'}
+    --use {'onsails/lspkind-nvim'}
+    --use {'kabouzeid/nvim-lspinstall'}
     --O
     --use 'neovim/nvim-lspconfig'
     --use 'glepnir/lspsaga.nvim'
@@ -128,4 +150,7 @@ return require('packer').startup(function(use)
     --use 'francoiscabrol/ranger.vim'
     --use 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
     --" prerequisite of vim-radical
+	require_plugin('nvim-lspconfig')
+    require_plugin('lspsaga.nvim')
+    require_plugin('lspkind-nvim')
 end)

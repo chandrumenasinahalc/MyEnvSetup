@@ -18,14 +18,14 @@ map('n',  '<M-k>',':resize +2<CR>',{noremap = true, silent = true})
 map('n',  '<M-h>',':vertical resize -2<CR>',{noremap = true, silent = true})
 map('n',  '<M-l>',':vertical resize +2<CR>',{noremap = true, silent = true})
 -- windows navigation
-map('n',  '<C-h>',' <C-w>h',{silent = true})
-map('n',  '<C-j>',' <C-w>j',{silent = true})
-map('n',  '<C-k>',' <C-w>k',{silent = true})
-map('n',  '<C-l>',' <C-w>l',{silent = true})
+map('n',  '<C-h>','<C-w>h',{silent = true})
+map('n',  '<C-j>','<C-w>j',{silent = true})
+map('n',  '<C-k>','<C-w>k',{silent = true})
+map('n',  '<C-l>','<C-w>l',{silent = true})
 -- terminal
-map('n','<F4>',':FloatermToggle<CR>',{noremap = true,silent = true})
+map('n','<F4>',':FloatermToggle --wintype=split<CR>',{noremap = true,silent = true})
 vim.cmd([[
-        tnoremap <F4> <C-\><C-n>:FloatermToggle<CR>
+        tnoremap <silent> <F4> <C-\><C-n>:FloatermToggle<CR>
 ]]
 )
 --tnoremap <F4> <C-\><C-n>:Nuake<CR>
@@ -48,10 +48,10 @@ map('n','<C-_>','<Plug>NERDCommenterToggle',{silent = true})
 map('n','<TAB>',':bnext<CR>',{noremap = true, silent = true})
 if vim.g.telescope == 1
 then
-map('n', '<space>b', ':Telescope buffers prompt_prefix=🔍<CR>', {noremap = true, silent = true})
-map('n', '<C-p>', ':Telescope find_files prompt_prefix=🔍<CR>', {noremap = true, silent = true})
-map('n', '<leader>b', ':Telescope buffers prompt_prefix=🔍<CR>', {noremap = true, silent = true})
-map('n','<C-g>',':Telescope live_grep<CR>',{noremap = true, silent = true})
+map('n', '<space>b', ':Telescope buffers<CR>', {noremap = true, silent = true})
+map('n', '<C-p>', ':lua require("telescope").extensions.fzf_writer.files()<CR>', {noremap = true, silent = true})
+map('n', '<leader>b', ':Telescope buffers<CR>', {noremap = true, silent = true})
+map('n','<C-g>',':lua require("telescope").extensions.fzf_writer.staged_grep()<CR>',{noremap = true, silent = true})
 map('n','<C-s>',':lua require("telescope.builtin").current_buffer_fuzzy_find()<CR>',{noremap = true, silent = true})
 else
 map('n', '<space>b', ':Buffers<CR>', {noremap = true, silent = true})
@@ -67,7 +67,7 @@ vim.cmd([[
         inoremap <A-j> <C-\><C-N><C-w>j
         inoremap <A-k> <C-\><C-N><C-w>k
         inoremap <A-l> <C-\><C-N><C-w>l
-        inoremap <F4> <C-\><C-n>:Nuake<CR>
+        inoremap <F4> <C-\><C-n>:FloatermToggle<CR>
         imap <C-v> <esc>:set paste<CR>i<C-r>*<esc>:set nopaste<CR>i
 ]])
 
@@ -142,4 +142,7 @@ map('n','<localleader>gr',':<C-u>CocCommand fzf-preview.ProjectGrep<Space>',{sil
 -- hop.nvim
 map('n', 's', ":HopChar2<cr>", {silent = true})
 map('n', 'S', ":HopWord<cr>", {silent = true})
+map('n','-','<Plug>(choosewin)',{silent = true})
 
+-- navigte back with mouse right clicks
+map('n','<C-RightMouse>','<C-t>',{silent = true})

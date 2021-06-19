@@ -23,6 +23,7 @@ vim.o.clipboard = "unnamedplus" -- Copy paste between vim and everything else
 vim.o.shiftwidth=4
 vim.o.tabstop=2
 --vim.o.guifont = "JetBrainsMono\\ Nerd\\ Font\\ Mono:h18"
+--vim.o.guifont = "DejaVu SansMono for PowerlineBook:h18"
 vim.o.smarttab = true
 vim.o.autoindent = true
 vim.o.laststatus = 2
@@ -49,7 +50,7 @@ then
     vim.o.termguicolors = true
 end
 vim.cmd('set formatoptions-=cro')
-vim.g.mapleader=","
+vim.g.mapleader=" "
 vim.g.maplocalleader=";"
 vim.g.telescope = 1
 -- some highlights

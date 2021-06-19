@@ -20,9 +20,9 @@ vim.g.nvim_tree_disable_netrw = 0 --1 by default, disables netrw
 vim.g.nvim_tree_hijack_netrw = 0 --1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
 vim.g.nvim_tree_add_trailing = 1 --0 by default, append a trailing slash to folder names
 vim.g.nvim_tree_show_icons = {
-				git= 1,
-				folders= 1,
-				files = 1,
+				git= 0,
+				folders= 0,
+				files = 0,
 }
 --If 0, do not show the icons for one of 'git' 'folder' and 'files'
 --1 by default, notice that if 'files' is 1, it will only display
@@ -30,9 +30,11 @@ vim.g.nvim_tree_show_icons = {
 
 -- default will show icon by default if no icon is provided
 -- default shows no icon by default
+				--default= '',
+				--symlink= '',
 vim.g.nvim_tree_icons = {
-				default= '',
-				symlink= '',
+				default= '',
+				symlink= '',
 				git= {
 								unstaged= "✗",
 								staged= "✓",
