@@ -1,7 +1,9 @@
 
+local M = {}
 --===================="
 --NvimTree
---===================="
+--==========▏=========="
+M.config = function ()
 --let g:nvim_tree_side = 'right' | 'left' "left by default
 vim.g.nvim_tree_width = 30 --30 by default
 vim.g.nvim_tree_ignore = { '.git', 'node_modules', '.cache' } --empty by default
@@ -85,3 +87,5 @@ vim.g.nvim_tree_bindings = {
   ["q"]              = tree_cb("close"),
 }
 
+end
+return M

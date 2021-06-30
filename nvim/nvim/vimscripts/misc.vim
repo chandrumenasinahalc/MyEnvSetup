@@ -82,7 +82,7 @@ if (has("termguicolors"))
 endif
 "highlight Comment cterm=italic gui=italic
 "highlight TSComment cterm=italic gui=italic
-colorscheme chandru
+"colorscheme chandru
 ":colorscheme nvcode
 "au VimEnter * colorscheme chandru
 

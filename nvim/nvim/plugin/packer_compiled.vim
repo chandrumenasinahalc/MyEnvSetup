@@ -76,6 +76,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/NrrwRgn"
   },
+  ["TrueZen.nvim"] = {
+    commands = { "TZAtaraxis" },
+    config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\vch-zen\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/opt/TrueZen.nvim"
+  },
   ["bclose.vim"] = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/bclose.vim"
@@ -100,6 +107,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/completion-nvim"
   },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/diffview.nvim"
+  },
   fzf = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/fzf"
@@ -122,12 +133,10 @@ _G.packer_plugins = {
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/git-messenger.vim"
   },
   ["gitsigns.nvim"] = {
-    loaded = true,
-    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
-  },
-  ["hop.nvim"] = {
-    loaded = true,
-    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/hop.nvim"
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\15ch-gitsign\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
@@ -166,8 +175,11 @@ _G.packer_plugins = {
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/nvim-peekup"
   },
   ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+    commands = { "NvimTreeToggle" },
+    config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\14ch-nvtree\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/opt/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -208,6 +220,10 @@ _G.packer_plugins = {
   ["quick-scope"] = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/quick-scope"
+  },
+  tabular = {
+    loaded = true,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/tabular"
   },
   tagbar = {
     loaded = true,
@@ -322,9 +338,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-visual-multi"
   },
-  ["vim-which-key"] = {
+  ["which-key.nvim"] = {
     loaded = true,
-    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-which-key"
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/which-key.nvim"
   }
 }
 
@@ -333,6 +349,13 @@ time([[Defining packer_plugins]], false)
 time([[Config for galaxyline.nvim]], true)
 try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18ch-galaxyline\frequire\0", "config", "galaxyline.nvim")
 time([[Config for galaxyline.nvim]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+vim.cmd [[command! -nargs=* -range -bang -complete=file TZAtaraxis lua require("packer.load")({'TrueZen.nvim'}, { cmd = "TZAtaraxis", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file NvimTreeToggle lua require("packer.load")({'nvim-tree.lua'}, { cmd = "NvimTreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+time([[Defining lazy-load commands]], false)
+
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
@@ -340,6 +363,11 @@ time([[Defining lazy-load filetype autocommands]], true)
 vim.cmd [[au FileType go ++once lua require("packer.load")({'vim-go'}, { ft = "go" }, _G.packer_plugins)]]
 vim.cmd [[au FileType markdown ++once lua require("packer.load")({'vim-go'}, { ft = "markdown" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'gitsigns.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'TrueZen.nvim'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
 time([[Sourcing ftdetect script at: /home/chandru/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]], true)

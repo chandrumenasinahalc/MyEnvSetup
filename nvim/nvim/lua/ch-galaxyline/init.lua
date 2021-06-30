@@ -99,8 +99,8 @@ gls.right[2] = {
 gls.left[3] = {
     GitIcon = {
         provider = function()
-            --return ' '
-            return ' '
+			return ' '
+            --return ' '
         end,
         condition = condition.check_git_workspace,
         separator = ' ',
@@ -164,20 +164,20 @@ gls.right[3] = {
 
 gls.right[4] = {DiagnosticInfo = {provider = 'DiagnosticInfo', icon = '  ', highlight = {colors.info_yellow, colors.bg}}}
 
-gls.right[5] = {
-    ShowLspClient = {
-        provider = 'GetLspClient',
-        condition = function()
-            local tbl = {['dashboard'] = true, [' '] = true}
-            if tbl[vim.bo.filetype] then return false end
-            return true
-        end,
-        icon = ' ',
-        highlight = {colors.grey, colors.bg}
-    }
-}
+--gls.right[5] = {
+    --ShowLspClient = {
+        --provider = 'GetLspClient',
+        --condition = function()
+            --local tbl = {['dashboard'] = true, [' '] = true}
+            --if tbl[vim.bo.filetype] then return false end
+            --return true
+        --end,
+        --icon = ' ',
+        --highlight = {colors.grey, colors.bg}
+    --}
+--}
 
-gls.right[6] = {
+gls.right[5] = {
     LineInfo = {
         provider = 'LineColumn',
         separator = '  ',
@@ -186,7 +186,7 @@ gls.right[6] = {
     }
 }
 
-gls.right[7] = {
+gls.right[6] = {
     PerCent = {
         provider = 'LinePercent',
         separator = ' ',
@@ -227,7 +227,7 @@ gls.right[7] = {
     --}
 --}
 
-gls.right[8] = {
+gls.right[7] = {
     Space = {
         provider = function()
             return ' '

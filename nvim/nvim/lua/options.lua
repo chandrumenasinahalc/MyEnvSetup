@@ -6,7 +6,6 @@ vim.o.mouse = "" -- Enable your mouse
 vim.o.splitbelow = true -- Horizontal splits will automatically be below
 vim.o.termguicolors = true -- set term giu colors most terminals support this
 vim.o.splitright = true -- Vertical splits will automatically be to the right
-vim.o.t_Co = "256" -- Support 256 colors
 vim.o.conceallevel = 0 -- So that I can see `` in markdown files
 vim.bo.expandtab = false -- Converts tabs to spaces
 vim.bo.smartindent = true -- Makes indenting smart
@@ -23,7 +22,7 @@ vim.o.clipboard = "unnamedplus" -- Copy paste between vim and everything else
 vim.o.shiftwidth=4
 vim.o.tabstop=2
 --vim.o.guifont = "JetBrainsMono\\ Nerd\\ Font\\ Mono:h18"
---vim.o.guifont = "DejaVu SansMono for PowerlineBook:h18"
+vim.o.guifont = "DejaVu SansMono for PowerlineBook:h18"
 vim.o.smarttab = true
 vim.o.autoindent = true
 vim.o.laststatus = 2
@@ -62,4 +61,5 @@ vim.cmd('hi Search cterm=NONE ctermfg=grey ctermbg=blue')
 vim.cmd('highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15')
 --"colorscheme codedark
 vim.g.highlightedyank_highlight_duration = 10000
+vim.cmd('colorscheme nvcode')
 

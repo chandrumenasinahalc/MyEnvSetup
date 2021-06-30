@@ -35,18 +35,17 @@ aucom.define_augroups({
 })
 aucom.define_augroups({
     general_setting = {
-        {'BufEnter,FocusGained,InsertLeave', '*', 'set nu rnu'},
-        {'User', 'fugitive', "if fugitive#buffer().type() =~# '^\\%(tree\\|blob\\)$' | nnoremap <buffer> <C-o> ..  :edit %:h<CR> endif"},
-        {'BufReadPost', 'fugitive://*', 'set bufhidden=delete'},
-        {'BufNewFile,BufRead', '*.py', ':lua require("utils").SetPythonIndent()'},
-        {'BufNewFile,BufRead', '*.{c,cpp,cc,h,hpp}', ':lua require("utils").SetCCIndent()'},
-        {'BufNewFile,BufReadPost', '*.{yaml,yml}', 'set filetype=yaml foldmethod=indent'},
-        {'FileType', 'yaml', 'setlocal ts=2 sts=2 sw=2 expandtab'},
-        {'BufNewFile,BufRead', 'Jenkinsfile', 'setf groovy'},
-        {'FileType', 'qf', 'nnoremap <buffer><silent> <esc> :quit<cr>'},
-				{'CursorHold','*',':lua require("ch-gitblame").BlameVirtText()'},
-				{'CursorMoved','*',':lua require("ch-gitblame").ClearBlameVirtText()'},
-				{'CursorMovedI','*',':lua require("ch-gitblame").ClearBlameVirtText()'},
-
+        {'BufEnter      , FocusGained    , InsertLeave'                                                                                                , '*'                                        , 'set nu rnu'}                          ,
+        {'User'         , 'fugitive'     , "if fugitive#buffer().type() =~# '^\\%(tree\\|blob\\)$' | nnoremap <buffer> <C-o> ..  :edit %:h<CR> endif"} ,
+        {'BufReadPost'  , 'fugitive://*' , 'set bufhidden=delete'}                                                                                     ,
+        {'BufNewFile    , BufRead'       , '*.py'                                                                                                      , ':lua require("utils").SetPythonIndent()'} ,
+        {'BufNewFile    , BufRead'       , '*.{c                                                                                                       , cpp                                        , cc                                     , h , hpp}' , ':lua require("utils").SetCCIndent()'} ,
+        {'BufNewFile    , BufReadPost'   , '*.{yaml                                                                                                    , yml}'                                      , 'set filetype=yaml foldmethod=indent'} ,
+        {'FileType'     , 'yaml'         , 'setlocal ts=2 sts=2 sw=2 expandtab'}                                                                       ,
+        {'BufNewFile    , BufRead'       , 'Jenkinsfile'                                                                                               , 'setf groovy'}                             ,
+        {'FileType'     , 'qf'           , 'nnoremap <buffer><silent> <esc> :quit<cr>'}                                                                ,
+		{'CursorHold'   , '*'            , ':lua require("ch-gitblame").BlameVirtText()'}                                                              ,
+		{'CursorMoved'  , '*'            , ':lua require("ch-gitblame").ClearBlameVirtText()'}                                                         ,
+		{'CursorMovedI' , '*'            , ':lua require("ch-gitblame").ClearBlameVirtText()'}                                                         
     }
 })
