@@ -61,5 +61,5 @@ vim.cmd('hi Search cterm=NONE ctermfg=grey ctermbg=blue')
 vim.cmd('highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15')
 --"colorscheme codedark
 vim.g.highlightedyank_highlight_duration = 10000
-vim.cmd('colorscheme nvcode')
+vim.cmd('colorscheme '.. O.colorscheme)
 
