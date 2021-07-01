@@ -49,7 +49,7 @@ then
     vim.o.termguicolors = true
 end
 vim.cmd('set formatoptions-=cro')
-vim.g.mapleader=" "
+vim.g.mapleader=O.leader_key
 vim.g.maplocalleader=";"
 vim.g.telescope = 1
 -- some highlights

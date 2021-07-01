@@ -76,12 +76,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/NrrwRgn"
   },
-  ["TrueZen.nvim"] = {
-    commands = { "TZAtaraxis" },
-    config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\vch-zen\frequire\0" },
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/chandru/.local/share/nvim/site/pack/packer/opt/TrueZen.nvim"
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/barbar.nvim"
   },
   ["bclose.vim"] = {
     loaded = true,
@@ -103,10 +100,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/colorizer"
   },
-  ["completion-nvim"] = {
-    loaded = true,
-    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/completion-nvim"
-  },
   ["diffview.nvim"] = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/diffview.nvim"
@@ -120,6 +113,7 @@ _G.packer_plugins = {
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/fzf-floaterm"
   },
   ["fzf.vim"] = {
+    config = { "\27LJ\2\nP\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0001source $HOME/.config/nvim/vimscripts/fzf.vim\bcmd\bvim\0" },
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/fzf.vim"
   },
@@ -139,6 +133,7 @@ _G.packer_plugins = {
     path = "/home/chandru/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim"
   },
   ["indent-blankline.nvim"] = {
+    config = { "\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18ch-indentline\frequire\0" },
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
   },
@@ -147,14 +142,16 @@ _G.packer_plugins = {
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/lua-language-server"
   },
   ["markdown-preview.nvim"] = {
-    loaded = true,
-    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim"
   },
   ["material.nvim"] = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/material.nvim"
   },
   neogit = {
+    config = { "\27LJ\2\n)\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\14ch-neogit\frequire\0" },
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/neogit"
   },
@@ -181,18 +178,6 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/opt/nvim-tree.lua"
   },
-  ["nvim-treesitter"] = {
-    loaded = true,
-    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
-  },
-  ["nvim-treesitter-refactor"] = {
-    loaded = true,
-    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/nvim-treesitter-refactor"
-  },
-  ["nvim-treesitter-textobjects"] = {
-    loaded = true,
-    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects"
-  },
   ["nvim-ts-rainbow"] = {
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow"
@@ -218,12 +203,16 @@ _G.packer_plugins = {
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
   ["quick-scope"] = {
+    config = { "\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18ch-quickscope\frequire\0" },
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/quick-scope"
   },
   tabular = {
-    loaded = true,
-    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/tabular"
+    after_files = { "/home/chandru/.local/share/nvim/site/pack/packer/opt/tabular/after/plugin/TabularMaps.vim" },
+    commands = { "Tabularize" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/opt/tabular"
   },
   tagbar = {
     loaded = true,
@@ -238,6 +227,7 @@ _G.packer_plugins = {
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim"
   },
   ["telescope.nvim"] = {
+    config = { "\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17ch-telescope\frequire\0" },
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
@@ -254,8 +244,9 @@ _G.packer_plugins = {
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-code-dark"
   },
   ["vim-delve"] = {
-    loaded = true,
-    path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-delve"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/chandru/.local/share/nvim/site/pack/packer/opt/vim-delve"
   },
   ["vim-devicons"] = {
     loaded = true,
@@ -270,10 +261,12 @@ _G.packer_plugins = {
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-easymotion"
   },
   ["vim-esearch"] = {
+    config = { "\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17ch-easysearh\frequire\0" },
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-esearch"
   },
   ["vim-floaterm"] = {
+    config = { "\27LJ\2\n+\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\16ch-floaterm\frequire\0" },
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-floaterm"
   },
@@ -286,6 +279,7 @@ _G.packer_plugins = {
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-fugitive"
   },
   ["vim-go"] = {
+    config = { "\27LJ\2\n(\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\rch-vimgo\frequire\0" },
     loaded = false,
     needs_bufread = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/opt/vim-go"
@@ -339,12 +333,45 @@ _G.packer_plugins = {
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/vim-visual-multi"
   },
   ["which-key.nvim"] = {
+    config = { "\27LJ\2\n+\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\16ch-whichkey\frequire\0" },
     loaded = true,
     path = "/home/chandru/.local/share/nvim/site/pack/packer/start/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\n+\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\16ch-whichkey\frequire\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+try_loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17ch-telescope\frequire\0", "config", "telescope.nvim")
+time([[Config for telescope.nvim]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18ch-indentline\frequire\0", "config", "indent-blankline.nvim")
+time([[Config for indent-blankline.nvim]], false)
+-- Config for: quick-scope
+time([[Config for quick-scope]], true)
+try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18ch-quickscope\frequire\0", "config", "quick-scope")
+time([[Config for quick-scope]], false)
+-- Config for: vim-floaterm
+time([[Config for vim-floaterm]], true)
+try_loadstring("\27LJ\2\n+\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\16ch-floaterm\frequire\0", "config", "vim-floaterm")
+time([[Config for vim-floaterm]], false)
+-- Config for: fzf.vim
+time([[Config for fzf.vim]], true)
+try_loadstring("\27LJ\2\nP\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0001source $HOME/.config/nvim/vimscripts/fzf.vim\bcmd\bvim\0", "config", "fzf.vim")
+time([[Config for fzf.vim]], false)
+-- Config for: vim-esearch
+time([[Config for vim-esearch]], true)
+try_loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17ch-easysearh\frequire\0", "config", "vim-esearch")
+time([[Config for vim-esearch]], false)
+-- Config for: neogit
+time([[Config for neogit]], true)
+try_loadstring("\27LJ\2\n)\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\14ch-neogit\frequire\0", "config", "neogit")
+time([[Config for neogit]], false)
 -- Config for: galaxyline.nvim
 time([[Config for galaxyline.nvim]], true)
 try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18ch-galaxyline\frequire\0", "config", "galaxyline.nvim")
@@ -352,21 +379,20 @@ time([[Config for galaxyline.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-vim.cmd [[command! -nargs=* -range -bang -complete=file TZAtaraxis lua require("packer.load")({'TrueZen.nvim'}, { cmd = "TZAtaraxis", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file NvimTreeToggle lua require("packer.load")({'nvim-tree.lua'}, { cmd = "NvimTreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file Tabularize lua require("packer.load")({'tabular'}, { cmd = "Tabularize", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType go ++once lua require("packer.load")({'vim-go'}, { ft = "go" }, _G.packer_plugins)]]
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'vim-go'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType go ++once lua require("packer.load")({'vim-delve', 'vim-go'}, { ft = "go" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au BufRead * ++once lua require("packer.load")({'gitsigns.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'TrueZen.nvim'}, { event = "BufEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
