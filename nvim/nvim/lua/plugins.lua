@@ -123,7 +123,7 @@ return require('packer').startup({function(use)
 	-- LSP related
 	use {
 		'neoclide/coc.nvim',branch='release',
-		confif= function() vim.cmd('source $HOME/.config/nvim/vimscripts/coc.vim') end
+		config= function() vim.cmd('source $HOME/.config/nvim/vimscripts/coc.vim') end
 	}
 	use 'antoinemadec/coc-fzf'
 	use 'sumneko/lua-language-server'

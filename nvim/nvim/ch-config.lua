@@ -8,8 +8,9 @@ an executable
 ]] -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 -- general
 O.auto_complete = true
+O.enable_treesitter = true
 O.colorscheme = 'nvcode'
-O.auto_close_tree = 0
+O.auto_close_tree = 1
 O.wrap_lines = false
 O.timeoutlen = 100
 O.document_highlight = true
