@@ -1,6 +1,11 @@
 local M = {}
 local api = vim.api
 function M.BlameVirtText()
+  if O.inlineBlame == false
+  then
+	  return
+  end
+
   local ft = vim.fn.expand('%:h:t') -- get the current file extension
   if ft == '' then -- if we are in a scratch buffer or unknown filetype
     return
@@ -27,6 +32,10 @@ function M.BlameVirtText()
   api.nvim_buf_set_virtual_text(0, 2, line[1] - 1, {{ "     "..text,'GitLens' }}, {}) -- set virtual text for namespace 2 with the content from git and assign it to the higlight group 'GitLens'
 end
 function M.ClearBlameVirtText() -- important for clearing out the text when our cursor moves
+  if O.inlineBlame == false
+  then
+	  return
+  end
   api.nvim_buf_clear_namespace(0, 2, 0, -1)
 end
 return M

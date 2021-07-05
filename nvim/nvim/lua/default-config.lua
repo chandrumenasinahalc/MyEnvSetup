@@ -14,6 +14,7 @@ O = {
     timeoutlen = 100,
     nvim_tree_disable_netrw = 0,
     database = {save_location = '~/.config/nvcode_db', auto_execute = 1},
+	inlineBlame = false,
     plugin = {
         hop = {enable = false},
         matchup = {enable = true},
