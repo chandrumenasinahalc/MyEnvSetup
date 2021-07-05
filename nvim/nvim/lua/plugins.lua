@@ -139,6 +139,9 @@ return require('packer').startup({function(use)
         config = function()
             require("ch-gitsign").config()
         end,
+		requires = {
+			'nvim-lua/plenary.nvim'
+		},
 		disable = not O.plugin.gitsigns.enable,
         event = "BufRead"
 	}
@@ -241,7 +244,7 @@ return require('packer').startup({function(use)
 		branch = 'main',
 		-- your statusline
 		config = function() require'ch-galaxyline' end,
-		disable = not O.plugin.delve.enable,
+		disable = not O.plugin.galaxyline.enable,
 		-- some optional icons
 		requires = {
 			{'kyazdani42/nvim-web-devicons', opt = true},

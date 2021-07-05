@@ -66,15 +66,9 @@ vim.api.nvim_set_keymap("n", "<Leader>h", ':let @/=""<CR>', { noremap = true, si
 vim.api.nvim_set_keymap(
   "n",
   "<Leader>e",
-  ":lua require'lv-nvimtree'.toggle_tree()<CR>",
+  ":lua require'ch-nvtree'.toggle_tree()<CR>",
   { noremap = true, silent = true }
 )
--- vim.api.nvim_set_keymap('n', '<Leader>e',
---                         ":NvimTreeToggle<CR>",
---                         {noremap = true, silent = true})
-
-
--- dashboard
 
 local mappings = {
 
