@@ -1,81 +1,57 @@
---[[
-O is the global options object
 
-Formatters and linters should be
-filled in as strings with either
-a global executable or a path to
-an executable
-]] -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
--- general
-O.auto_complete = true
-O.enable_treesitter = true
 O.colorscheme = 'nvcode'
-O.auto_close_tree = 1
+O.hidden_files = true
 O.wrap_lines = false
+O.number = true
+O.relative_number = true
+O.cursorline = true
+O.shell = 'bash'
 O.timeoutlen = 100
-O.document_highlight = true
-O.extras = false
-O.leader_key = ' '
+O.nvim_tree_disable_netrw = 0
+--O.database = {save_location = '~/.config/nvcode_db' auto_execute = 1}
 
--- After changing plugin config it is recommended to run :PackerCompile
-O.plugin.hop.active = false
-O.plugin.dial.active = false
-O.plugin.dashboard.active = true
-O.plugin.matchup.active = false
 
--- dashboard
--- O.dashboard.custom_header = {""}
--- O.dashboard.footer = {""}
+-- Plugin settings
+O.plugin.hop.enable = true
+O.plugin.matchup.enable = true
+O.plugin.surround.enable = true
+O.plugin.vim_repeat.enable = true
+O.plugin.tagbar.enable = true
+O.plugin.nerdcommenter.enable = true
+O.plugin.highlightedyank.enable = true
+O.plugin.devicons.enable = true
+O.plugin.tabular.enable = true
+O.plugin.fugitive.enable = true
+O.plugin.smoothie.enable = true
+O.plugin.gitsigns.enable = true
+O.plugin.gitmessenger.enable = true
+O.plugin.neogit.enable = true
+--easy_search.enable = false
+--easy_motion.enable = true
+--sneak.enable = true
+O.plugin.fzf.enable = true
+O.plugin.bqbf.enable = true
+O.plugin.vim_grepper.enable = true
+O.plugin.telescope.enable = true
+O.plugin.vim_peekup.enable = false
+O.plugin.quick_scope.enable = true
+O.plugin.choosewin.enable = true
+O.plugin.vim_go.enable = true
+O.plugin.galaxyline.enable = true
+O.plugin.barbar.enable = true
+O.plugin.coc.enable = true
+O.plugin.sumneko.enable = true
+O.plugin.markdown_preview.enable = true
+O.plugin.floaterm.enable = true
+O.plugin.nvimtree.enable = true
+O.plugin.nvcode.enable = true
+O.plugin.treesitter.enable = true
+O.plugin.indentblankline.enable = true
+O.plugin.whichkey.enable = true
+O.plugin.visul_multi.enable = true
+O.plugin.vcolor.enable = true
+O.plugin.popup.enable = true
+O.plugin.radical.enable = true
+O.plugin.spectre.enable = true
+O.plugin.nrrwRgn.enable = true
 
--- if you don't want all the parsers change this to a table of the ones you want
-O.treesitter.ensure_installed = "all"
-O.treesitter.ignore_install = {"haskell"}
-O.treesitter.highlight.enabled = true
-
-O.lang.clang.diagnostics.virtual_text = false
-O.lang.clang.diagnostics.signs = false
-O.lang.clang.diagnostics.underline = false
-
--- python
--- add things like O.python.formatter.yapf.exec_path
--- add things like O.python.linter.flake8.exec_path
--- add things like O.python.formatter.isort.exec_path
-O.lang.python.formatter = 'yapf'
--- O.python.linter = 'flake8'
-O.lang.python.active = true
-O.lang.python.isort = true
-O.lang.python.autoformat = true
-O.lang.python.diagnostics.virtual_text = true
-O.lang.python.diagnostics.signs = true
-O.lang.python.diagnostics.underline = true
-O.lang.python.analysis.type_checking = "off"
-O.lang.python.analysis.auto_search_paths = true
-O.lang.python.analysis.use_library_code_types = true
-
--- lua
--- TODO look into stylua
-O.lang.lua.active = true
-O.lang.lua.formatter = 'lua-format'
--- O.lua.formatter = 'lua-format'
-O.lang.lua.autoformat = false
-
--- javascript
-O.lang.tsserver.formatter = 'prettier'
-O.lang.tsserver.linter = nil
-O.lang.tsserver.autoformat = true
-
--- json
-O.lang.json.autoformat = true
-
--- ruby
-O.lang.ruby.autoformat = true
-
--- go
-O.lang.go.autoformat = true
--- create custom autocommand field (This would be easy with lua)
-
--- Turn off relative_numbers
--- O.relative_number = false
-
--- Turn off cursorline
--- O.cursorline = false

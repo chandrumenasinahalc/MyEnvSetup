@@ -3,9 +3,8 @@ DATA_PATH = vim.fn.stdpath('data')
 CACHE_PATH = vim.fn.stdpath('cache')
 
 O = {
-    auto_close_tree = 0,
-    auto_complete = true,
-    colorscheme = 'lunar',
+    colorscheme = 'nvcode',
+	leader_key =' ',
     hidden_files = true,
     wrap_lines = false,
     number = true,
@@ -14,149 +13,58 @@ O = {
     shell = 'bash',
     timeoutlen = 100,
     nvim_tree_disable_netrw = 0,
-    extras = false,
-
-    -- @usage pass a table with your desired languages
-    treesitter = {
-        ensure_installed = "all",
-        ignore_install = {"haskell"},
-        highlight = {enabled = true},
-        playground = {enabled = true},
-        rainbow = {enabled = false}
-    },
-
     database = {save_location = '~/.config/nvcode_db', auto_execute = 1},
-
     plugin = {
-        hop = {active = false},
-        dial = {active = false},
-        dashboard = {active = false},
-        matchup = {active = false}
-
-
-    },
-
-    lang = {
-        python = {
-            active = false,
-            linter = '',
-            -- @usage can be 'yapf', 'black'
-            formatter = '',
-            autoformat = false,
-            isort = false,
-            diagnostics = {
-                virtual_text = {spacing = 0, prefix = ""},
-                signs = true,
-                underline = true
-            },
-            analysis = {
-                type_checking = "basic",
-                auto_search_paths = true,
-                use_library_code_types = true
-            }
-        },
-        dart = {
-            active = false,
-            sdk_path = '/usr/lib/dart/bin/snapshots/analysis_server.dart.snapshot'
-        },
-        lua = {
-            active = false,
-            -- @usage can be 'lua-format'
-            formatter = '',
-            autoformat = false,
-            diagnostics = {
-                virtual_text = {spacing = 0, prefix = ""},
-                signs = true,
-                underline = true
-            }
-        },
-        sh = {
-            active = false,
-            -- @usage can be 'shellcheck'
-            linter = '',
-            -- @usage can be 'shfmt'
-            formatter = '',
-            autoformat = false,
-            diagnostics = {
-                virtual_text = {spacing = 0, prefix = ""},
-                signs = true,
-                underline = true
-            }
-        },
-        tsserver = {
-            active = false,
-            -- @usage can be 'eslint'
-            linter = '',
-            -- @usage can be 'prettier'
-            formatter = '',
-            autoformat = false,
-            diagnostics = {
-                virtual_text = {spacing = 0, prefix = ""},
-                signs = true,
-                underline = true
-            }
-        },
-        json = {
-            active = false,
-            -- @usage can be 'prettier'
-            formatter = '',
-            autoformat = false,
-            diagnostics = {
-                virtual_text = {spacing = 0, prefix = ""},
-                signs = true,
-                underline = true
-            }
-        },
-        tailwindcss = {
-            active = false,
-            filetypes = {
-                'html', 'css', 'scss', 'javascript', 'javascriptreact',
-                'typescript', 'typescriptreact'
-            }
-        },
-        clang = {
-            active = false,
-            diagnostics = {
-                virtual_text = {spacing = 0, prefix = ""},
-                signs = true,
-                underline = true
-            }
-        },
-        ruby = {
-            active = false,
-            diagnostics = {
-                virtualtext = {spacing = 0, prefix = ""},
-                signs = true,
-                underline = true
-            },
-            filetypes = {'rb', 'erb', 'rakefile'}
-        },
-        go = {active = false},
-        elixer = {active = false},
-        vim = {active = false},
-        yaml = {active = false},
-        terraform = {active = false},
-        rust = {active = false},
-        svelte = {active = false},
-        php = {active = false},
-        latex = {active = false},
-        kotlin = {active = false},
-        html = {active = false},
-        elm = {active = false},
-        emmet = {active = false},
-        graphql = {active = false},
-        efm = {active = true},
-        docker = {active = false},
-        cmake = {active = false},
-        java = {active = false},
-        css = {
-            active = false,
-
-            formatter = '',
-            autoformat = false,
-            virtual_text = true
-        }
-
+        hop = {enable = false},
+        matchup = {enable = true},
+		surround = { enable = false },
+		vim_repeat = { enable = false },
+		tagbar = { enable = false },
+		nerdcommenter = { enable = false },
+		highlightedyank = { enable = false },
+		startify = { enable = false },
+		devicons = { enable = false },
+		tabular	 = { enable = false },
+		fugitive	 = { enable = false },
+		smoothie	 = { enable = false },
+		easyclip	 = { enable = false },
+		vim_rhubarb	 = { enable = false },
+		gitsigns	 = { enable = false },
+		gitmessenger	 = { enable = false },
+		neogit	 = { enable = false },
+		easy_search	 = { enable = false },
+		easy_motion	 = { enable = false },
+		sneak	 = { enable = false },
+		fzf	 = { enable = false },
+		bqbf	 = { enable = false },
+		vim_grepper	 = { enable = false },
+		telescope	 = { enable = false },
+		vim_peekup	 = { enable = false },
+		quick_scope	 = { enable = false },
+		choosewin	 = { enable = false },
+		vim_go	 = { enable = false },
+		galaxyline	 = { enable = false },
+		barbar	 = { enable = false },
+		coc	 = { enable = false },
+		sumneko	 = { enable = false },
+		markdown_preview	 = { enable = false },
+		floaterm	 = { enable = false },
+		nuake	 = { enable = false },
+		nvimtree	 = { enable = false },
+		nvcode	 = { enable = false },
+		zenmode	 = { enable = false },
+		treesitter	 = { enable = false },
+		indentblankline	 = { enable = false },
+		whichkey	 = { enable = false },
+		visul_multi	 = { enable = false },
+	    vcolor		 = { enable = false },
+	    codedark		 = { enable = false },
+	    puml_syntax		 = { enable = false },
+	    popup		 = { enable = false },
+	    radical		 = { enable = false },
+	    delve		 = { enable = false },
+	    spectre		 = { enable = false },
+	    nrrwRgn		 = { enable = false }
     },
 }
 

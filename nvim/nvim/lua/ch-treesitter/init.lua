@@ -1,3 +1,5 @@
+local M = {}
+M.config = function()
 require'nvim-treesitter.configs'.setup {
     ensure_installed = {"go","yaml","json","python"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
     -- TODO seems to be broken
@@ -29,3 +31,5 @@ require'nvim-treesitter.configs'.setup {
 		},
 	}
 }
+end
+return M

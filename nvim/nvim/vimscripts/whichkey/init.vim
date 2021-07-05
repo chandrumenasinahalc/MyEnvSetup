@@ -8,7 +8,7 @@ let g:which_key_display_names = {'<CR>': '↵', '<TAB>': '⇆', " ": 'SPC'}
 " Map leader to which_key
 "nnoremap <silent> <leader> :silent <c-u> :silent WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<space>'<CR>
-nnoremap <silent> <leader> :silent <c-u>WhichKey '<space>'<CR>
+"nnoremap <silent> <leader> :silent <c-u>WhichKey '<space>'<CR>
 nnoremap <silent> <localleader> :silent <c-u>:silent WhichKey ';'<CR>
 
 let g:which_key_map =  {}
@@ -122,5 +122,6 @@ let g:which_key_map.l = {
       \ 'S' : [':Telescope lsp_workspace_symbols'    , 'workspace symbols'],
       \ }
 
-call which_key#register('<Space>', "g:which_key_map")
 
+
+autocmd User vim-which-key call which_key#register('<Space>', 'g:which_key_map')

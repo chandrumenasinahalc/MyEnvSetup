@@ -1,8 +1,3 @@
-if g:telescope ==  1
-    let g:dashboard_default_executive = 'telescope'
-else
-    let g:dashboard_default_executive = 'fzf'
-endif
 "===================================
 " ref https://github.com/kevinhwang91/nvim-bqf#integrate-with-other-plugins
 "===================================
@@ -104,3 +99,6 @@ let g:neovide_floating_window_opacity = 1.0
 let g:neovide_window_floating_blur=0
 "set guifont=DejaVu\ Sans Mono\ for\ Powerline\ Book 18
 "set guifont=JetBrains\ Mono,Delugia\ Nerd\ Font,FreeMono:h15
+"
+let bufferline = get(g:, 'bufferline', {})
+let bufferline.icons=v:false
