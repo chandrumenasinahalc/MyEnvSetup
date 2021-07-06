@@ -103,23 +103,46 @@ return require('packer').startup({function(use)
 	}
 
 	--lsp related
-	use {
-		"neovim/nvim-lspconfig"
-	}
-  	use { "glepnir/lspsaga.nvim" }
-  	use { "kabouzeid/nvim-lspinstall"}
-   	use {
-    	"hrsh7th/nvim-compe",
-    	event = "InsertEnter",
-    	config = function()
-      		require("ch-compe").config()
-    	end
-  	}
-	use {
-		'ray-x/lsp_signature.nvim',
-		config = function ()
-			require('ch-signature').config()
-		end
+	if O.lsp_client == 'native'
+	then
+		use {
+			"neovim/nvim-lspconfig"
+		}
+		use { "glepnir/lspsaga.nvim" }
+		use { "kabouzeid/nvim-lspinstall"}
+		use {
+			"hrsh7th/nvim-compe",
+			event = "InsertEnter",
+			config = function()
+				require("ch-compe").config()
+			end
+		}
+		use {
+			'ray-x/lsp_signature.nvim',
+			config = function ()
+				require('ch-signature').config()
+			end
+		}
+		-- Symbol Outline
+		use {
+			"simrat39/symbols-outline.nvim",
+			cmd = "SymbolsOutline",
+			config = function() require'ch-symboloutline' end,
+			disable = not O.plugin.symbol_outline.enable
+		}
+		require('lsp')
+	elseif O.lsp_client == 'coc'
+	then
+		use {
+			'neoclide/coc.nvim',branch='release',
+			disable = not O.plugin.coc.enable,
+			config= function() vim.cmd('source $HOME/.config/nvim/vimscripts/coc.vim') end,
+			requires= 'antoinemadec/coc-fzf'
+		}
+	end
+	use{
+		'sumneko/lua-language-server',
+		disable = not O.plugin.sumneko.enable,
 	}
 	-- git related
 	use {
@@ -249,17 +272,6 @@ return require('packer').startup({function(use)
 		disable = not O.plugin.barbar.enable
 	}
 
-	-- LSP related
-	use {
-		'neoclide/coc.nvim',branch='release',
-		disable = not O.plugin.coc.enable,
-		config= function() vim.cmd('source $HOME/.config/nvim/vimscripts/coc.vim') end,
-		requires= 'antoinemadec/coc-fzf'
-	}
-	use{
-		'sumneko/lua-language-server',
-		disable = not O.plugin.sumneko.enable,
-	}
 
 	-- markdown
 	use {
@@ -355,13 +367,6 @@ return require('packer').startup({function(use)
         end,
         disable = not O.plugin.spectre.enable
     }
-  -- Symbol Outline
-  use {
-    "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
-	config = function() require'ch-symboloutline' end,
-    disable = not O.plugin.symbol_outline.enable
-  }
 
 end,
 config = {

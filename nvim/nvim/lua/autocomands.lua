@@ -50,8 +50,11 @@ aucom.define_augroups({
     }
 })
 
+if O.lsp_client == 'native'
+then	
 aucom.define_augroups({
 	signature_help = {
 	 {'BufReadPost,FileReadPost','*',':lua require "lsp_signature".on_attach()'}
 	}
 })
+end

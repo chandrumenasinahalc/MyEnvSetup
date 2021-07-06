@@ -12,6 +12,7 @@ O = {
     cursorline = true,
     shell = 'bash',
     timeoutlen = 100,
+	lsp_client = 'coc', -- allowed values 'native' | 'coc'
 	auto_complete = false,
     nvim_tree_disable_netrw = 0,
     database = {save_location = '~/.config/nvcode_db', auto_execute = 1},
