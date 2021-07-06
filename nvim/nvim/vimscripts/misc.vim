@@ -87,7 +87,8 @@ au VimEnter * highlight TelescopeResultsBorder        guifg=orange
 "set telescope border to light_green
 "au VimEnter * highlight TelescopeBorder         guifg=#B5CEA8  
 "au VimEnter * highlight TelescopeBorder         guifg=cyan
-au VimEnter * au! CocFzfLocation User CocLocationsChange
+
+"au VimEnter * au! CocFzfLocation User CocLocationsChange
 au VimEnter * highlight BqfPreviewBorder guifg=#ffdab9
 au VimEnter * highlight GitLens guifg=#5C5656
 

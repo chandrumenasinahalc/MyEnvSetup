@@ -8,6 +8,7 @@ O.cursorline = true
 O.shell = 'bash'
 O.timeoutlen = 100
 O.nvim_tree_disable_netrw = 0
+O.auto_complete = true
 --O.database = {save_location = '~/.config/nvcode_db' auto_execute = 1}
 --O.inlineBlame = true
 
@@ -23,7 +24,8 @@ O.plugin.highlightedyank.enable = true
 O.plugin.devicons.enable = true
 O.plugin.tabular.enable = true
 O.plugin.fugitive.enable = true
-O.plugin.smoothie.enable = true
+O.plugin.smoothie.enable = false
+O.plugin.neoscroll.enable = true
 O.plugin.gitsigns.enable = true
 O.plugin.gitmessenger.enable = true
 O.plugin.neogit.enable = true
@@ -40,7 +42,7 @@ O.plugin.choosewin.enable = true
 O.plugin.vim_go.enable = true
 O.plugin.galaxyline.enable = true
 O.plugin.barbar.enable = true
-O.plugin.coc.enable = true
+O.plugin.coc.enable = false
 O.plugin.sumneko.enable = true
 O.plugin.markdown_preview.enable = true
 O.plugin.floaterm.enable = true
@@ -55,4 +57,4 @@ O.plugin.popup.enable = true
 O.plugin.radical.enable = true
 O.plugin.spectre.enable = true
 O.plugin.nrrwRgn.enable = true
-
+O.plugin.symbol_outline.enable = true

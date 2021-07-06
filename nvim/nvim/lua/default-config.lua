@@ -12,6 +12,7 @@ O = {
     cursorline = true,
     shell = 'bash',
     timeoutlen = 100,
+	auto_complete = false,
     nvim_tree_disable_netrw = 0,
     database = {save_location = '~/.config/nvcode_db', auto_execute = 1},
 	inlineBlame = false,
@@ -65,6 +66,8 @@ O = {
 	    radical		 = { enable = false },
 	    delve		 = { enable = false },
 	    spectre		 = { enable = false },
+	    symbol_outline       = { enable = false },
+	    neoscroll       = { enable = false },
 	    nrrwRgn		 = { enable = false }
     },
 }

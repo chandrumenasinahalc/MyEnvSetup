@@ -1,41 +1,11 @@
---local execute = vim.fn.nvim_command
---local fn =  vim.fn
---local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-
---if fn.empty(fn.glob(install_path)) > 0 then
-	--vim.api.nvim_command('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
-	--vim.api.nvim_command 'packadd packer.nvim'
---end
-
---vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile'  Auto compile when there are changes in plugins.lua
---require('packer').init({display = {auto_clean = false}})
-
---local function require_plugin(plugin)
-	--local plugin_prefix = fn.stdpath('data') .. '/site/pack/packer/opt/'
-
-	--local plugin_path = plugin_prefix .. plugin .. '/'
-		--print('test '..plugin_path)
-	--local ok, err, code = os.rename(plugin_path, plugin_path)
-	--if not ok then
-		--if code == 13 then
-			 --Permission denied, but it exists
-			--return true
-		--end
-	--end
-		--print(ok, err, code)
-	--if ok then vim.cmd('packadd ' .. plugin) end
-	--return ok, err, code
---end
-
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 
 if fn.empty(fn.glob(install_path)) > 0 then
-    execute("!git clone https://github.com/wbthomason/packer.nvim " ..
-                install_path)
-    execute "packadd packer.nvim"
+  execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
+  execute "packadd packer.nvim"
 end
 
 local packer_ok, packer = pcall(require, "packer")
@@ -45,10 +15,8 @@ end
 
 packer.init {
   -- compile_path = vim.fn.stdpath('data')..'/site/pack/loader/start/packer.nvim/plugin/packer_compiled.vim',
-  compile_path = require("packer.util").join_paths(vim.fn.stdpath('config'), 'plugin', 'packer_compiled.vim'),
-  git = {
-    clone_timeout = 300
-  },
+  compile_path = require("packer.util").join_paths(vim.fn.stdpath "config", "plugin", "packer_compiled.vim"),
+  git = { clone_timeout = 300 },
   display = {
     open_fn = function()
       return require("packer.util").float { border = "single" }
@@ -56,8 +24,7 @@ packer.init {
   },
 }
 
-vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
-
+vim.cmd "autocmd BufWritePost plugins.lua PackerCompile"
 
 return require('packer').startup({function(use)
 	-- Packer can manage itself as an optional plugin
@@ -121,6 +88,13 @@ return require('packer').startup({function(use)
 		'psliwka/vim-smoothie',
 		disable = not O.plugin.smoothie.enable,
 	}
+	use{
+		'karb94/neoscroll.nvim',
+		config = function ()
+			require('ch-neoscroll')
+		end,
+		disable = not O.plugin.neoscroll.enable
+	}
 	-- Convert numbers for diffrent base like octal,binary, decimal etc (A show all version of number)
 	use {
 		'glts/vim-radical',
@@ -128,6 +102,25 @@ return require('packer').startup({function(use)
 		requires = 'glts/vim-magnum'
 	}
 
+	--lsp related
+	use {
+		"neovim/nvim-lspconfig"
+	}
+  	use { "glepnir/lspsaga.nvim" }
+  	use { "kabouzeid/nvim-lspinstall"}
+   	use {
+    	"hrsh7th/nvim-compe",
+    	event = "InsertEnter",
+    	config = function()
+      		require("ch-compe").config()
+    	end
+  	}
+	use {
+		'ray-x/lsp_signature.nvim',
+		config = function ()
+			require('ch-signature').config()
+		end
+	}
 	-- git related
 	use {
 		'tpope/vim-fugitive',
@@ -226,6 +219,7 @@ return require('packer').startup({function(use)
 		disable = not O.plugin.choosewin.enable,
 	}
 
+
 	-- golang related
 	use {
 		'fatih/vim-go',
@@ -266,11 +260,6 @@ return require('packer').startup({function(use)
 		'sumneko/lua-language-server',
 		disable = not O.plugin.sumneko.enable,
 	}
-	--use 'nvim-lua/completion-nvim'
-	--require_plugin('nvim-lspconfig')
-	--require_plugin('lspsaga.nvim')
-	--require_plugin('lspkind-nvim')
-
 
 	-- markdown
 	use {
@@ -366,6 +355,13 @@ return require('packer').startup({function(use)
         end,
         disable = not O.plugin.spectre.enable
     }
+  -- Symbol Outline
+  use {
+    "simrat39/symbols-outline.nvim",
+    cmd = "SymbolsOutline",
+	config = function() require'ch-symboloutline' end,
+    disable = not O.plugin.symbol_outline.enable
+  }
 
 end,
 config = {

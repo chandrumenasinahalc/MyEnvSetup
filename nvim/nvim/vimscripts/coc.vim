@@ -180,3 +180,4 @@ let g:coc_explorer_global_presets = {
             \   },
             \ }
 au! BufEnter * if (winnr("$") ==1 && &filetype == 'coc-explorer') | q | endif
+au VimEnter * au! CocFzfLocation User CocLocationsChange

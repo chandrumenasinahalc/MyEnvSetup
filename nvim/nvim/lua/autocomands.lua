@@ -49,3 +49,9 @@ aucom.define_augroups({
 		{'CursorMovedI' , '*'            , ':lua require("ch-gitblame").ClearBlameVirtText()'}                                                         
     }
 })
+
+aucom.define_augroups({
+	signature_help = {
+	 {'BufReadPost,FileReadPost','*',':lua require "lsp_signature".on_attach()'}
+	}
+})

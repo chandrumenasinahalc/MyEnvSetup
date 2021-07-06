@@ -15,6 +15,7 @@ vim.g.go_metalinter_autosave = 0
 vim.g.go_metalinter_autosave = 0
 vim.g.go_metalinter_command = "golangci-lint"
 vim.g.go_list_type = 'quickfix'
+vim.g.go_doc_keywordprg_enabled = 0
 
 --, 'varcheck']
 --vim.g.go_metalinter_enabled = ['vet', 'golint', 'errcheck', 'varcheck', 'aligncheck', 'ineffassign', 'deadcode','gosimple', 'staticcheck']

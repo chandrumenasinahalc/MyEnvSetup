@@ -9,6 +9,10 @@ end
 map('n' , '<Leader>t'  , ':TagbarToggle<CR>'                           , {noremap = true   , silent = true})
 map('n' , '<Leader>m'  , ':lua require("utils").ToggleMouse()<CR>'     , {noremap = true   , silent = true})
 map('n' , '<Leader>z'  , ':call s:ZoomToggle<CR>'                      , {noremap = true   , silent = true})
+if O.plugin.symbol_outline.enable == true
+then
+map('n','<leader>o',':SymbolsOutline<CR>',{silent = true})
+end
 -- resize windows
 map('n' , '<M-j>' , ':resize -2<CR>'          , {noremap = true , silent = true})
 map('n' , '<M-k>' , ':resize +2<CR>'          , {noremap = true , silent = true})
@@ -170,6 +174,7 @@ then
 	map('n' , 'S' , ":HopWord<cr>"      , {silent = true})
 	map('n' , '-' , '<Plug>(choosewin)' , {silent = true})
 end
+
 
 -- navigte back with mouse right clicks
 map('n' , '<C-RightMouse>' , '<C-t>' , {silent = true})
