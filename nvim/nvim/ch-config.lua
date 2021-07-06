@@ -10,7 +10,7 @@ O.timeoutlen = 100
 O.nvim_tree_disable_netrw = 0
 O.auto_complete = true
 --O.database = {save_location = '~/.config/nvcode_db' auto_execute = 1}
---O.inlineBlame = true
+O.inlineBlame = true
 
 
 -- Plugin settings
